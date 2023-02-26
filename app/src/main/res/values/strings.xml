@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Bunkies</string>
+    <string name="enter_email_address">Enter Email address</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign up</string>
+    <string name="choose_marital_status">Choose a marital status</string>
+    <string name="gender_preference">Tell us your gender_preference</string>
+    <string name="occupational_reference">Tell us your occupational preference</string>
+    <string name="proceed">Proceed</string>
+</resources>

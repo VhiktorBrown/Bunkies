@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.account_setup.preferences.PreferencesActivity">
+
+    <ImageView
+        android:id="@+id/go_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Your Preferences"
+        app:layout_constraintTop_toTopOf="@+id/go_back"
+        app:layout_constraintBottom_toBottomOf="@+id/go_back"
+        app:layout_constraintStart_toEndOf="@+id/go_back"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/textGrey"
+        android:fontFamily="@font/montserrat_regular" />
+
+    <TextView
+        android:id="@+id/choose_marital_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_marital_status"
+        app:layout_constraintStart_toStartOf="@+id/go_back"
+        app:layout_constraintTop_toBottomOf="@+id/go_back"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/textGrey" />
+
+    <RadioGroup
+        android:id="@+id/marital_status_radio_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/go_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/choose_marital_status_text">
+
+        <RadioButton
+            android:id="@+id/married"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Married"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/un_married"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="Unmarried"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp" />
+
+        <RadioButton
+            android:id="@+id/separated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="Separated"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/choose_gender_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gender_preference"
+        app:layout_constraintStart_toStartOf="@+id/go_back"
+        app:layout_constraintTop_toBottomOf="@+id/marital_status_radio_group"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_12ssp"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/textGrey" />
+
+    <RadioGroup
+        android:id="@+id/gender_radio_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/go_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/choose_gender_text">
+
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="Female"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp" />
+
+        <RadioButton
+            android:id="@+id/other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="Other"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/occupation_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/occupational_reference"
+        app:layout_constraintStart_toStartOf="@+id/go_back"
+        app:layout_constraintTop_toBottomOf="@+id/gender_radio_group"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/textGrey" />
+
+    <RadioGroup
+        android:id="@+id/occupation_radio_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/go_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/occupation_text">
+
+        <RadioButton
+            android:id="@+id/professional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Professional"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="Student"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp" />
+
+        <RadioButton
+            android:id="@+id/otherProfession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="Other"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/choose_age_range_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose A Preferred Age Range"
+        app:layout_constraintStart_toStartOf="@+id/go_back"
+        app:layout_constraintTop_toBottomOf="@+id/occupation_radio_group"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/textGrey" />
+
+    <SeekBar
+        android:id="@+id/age_seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/go_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@id/choose_age_range_text"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/proceed_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintStart_toStartOf="@+id/go_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:background="@drawable/primary_button"
+        android:text="@string/proceed"
+        android:textSize="@dimen/_14ssp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:textColor="@color/secondary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

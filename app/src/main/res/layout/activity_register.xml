@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondary"
+    tools:context=".ui.register.RegisterActivity">
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="@dimen/_26ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/gluten_regular"
+        android:textStyle="bold"
+        android:textColor="@color/primary" />
+
+    <TextView
+        android:id="@+id/sign_up_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        app:layout_constraintStart_toStartOf="@+id/app_name"
+        app:layout_constraintTop_toBottomOf="@+id/app_name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20ssp"
+        android:fontFamily="@font/montserrat_regular"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+    <TextView
+        android:id="@+id/enter_details_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fill your details to continue."
+        app:layout_constraintStart_toStartOf="@+id/app_name"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_text"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/montserrat_regular"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputFullName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        app:hintEnabled="true"
+        app:layout_constraintTop_toBottomOf="@+id/enter_details_text"
+        android:textColorHint="@color/textColor"
+        app:boxStrokeColor="@color/primary"
+        app:layout_constraintStart_toStartOf="@+id/app_name"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_regular"
+            android:inputType="textEmailAddress"
+            android:hint="@string/enter_email_address" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:hintEnabled="true"
+        app:layout_constraintTop_toBottomOf="@+id/textInputFullName"
+        android:textColorHint="@color/textColor"
+        app:boxStrokeColor="@color/primary"
+        app:layout_constraintStart_toStartOf="@+id/app_name"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_regular"
+            android:inputType="textEmailAddress"
+            android:hint="@string/enter_email_address" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:passwordToggleTint="@color/textColor"
+        app:passwordToggleEnabled="true"
+        app:endIconTint="@color/textColor"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:hintEnabled="true"
+        android:layout_below="@+id/textInputEmail"
+        android:textColorHint="@color/textColor"
+        app:boxStrokeColor="@color/primary"
+        app:layout_constraintTop_toBottomOf="@+id/textInputEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/app_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_regular"
+            app:passwordToggleEnabled="true"
+            android:inputType="textPassword"
+            android:hint="@string/password" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sign_up_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputPassword"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:background="@drawable/primary_button"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/sign_up"
+        android:textColor="@color/secondary"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_14ssp" />
+
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="or"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_button"
+        android:textSize="@dimen/_16ssp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/textColor"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sign_in_with_google"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/or"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:background="@drawable/sign_up_with_google"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_14ssp"
+        android:drawableStart="@drawable/google_icon"
+        android:paddingEnd="@dimen/_20sdp"
+        android:paddingStart="@dimen/_50sdp"
+        android:text="Sign in with Google"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/textColor2"/>
+
+    <TextView
+        android:id="@+id/already_have_an_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account? Log in."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_with_google"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/textColor2"
+        android:textSize="@dimen/_12ssp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
