@@ -6,4 +6,5 @@
     <color name="textColor">#6b6b6d</color>
     <color name="textColor2">#46464a</color>
     <color name="textGrey">#07070B</color>
+    <color name="chip_unselected_background">#F8F2E6</color>
 </resources>

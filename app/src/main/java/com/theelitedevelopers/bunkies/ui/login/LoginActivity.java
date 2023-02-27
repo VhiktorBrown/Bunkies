@@ -15,6 +15,7 @@ import android.view.View;
 
 import com.theelitedevelopers.bunkies.R;
 import com.theelitedevelopers.bunkies.databinding.ActivityLoginBinding;
+import com.theelitedevelopers.bunkies.ui.account_setup.preferences.PreferencesActivity;
 import com.theelitedevelopers.bunkies.ui.register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -25,6 +26,10 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.logInButton.setOnClickListener(v -> {
+            startActivity(new Intent(this, PreferencesActivity.class));
+            finishAffinity();
+        });
 
         SpannableString spannableString = new SpannableString("Don't have an account? Sign up");
         ClickableSpan clickableSpan = new ClickableSpan() {
@@ -42,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
-        spannableString.setSpan(clickableSpan, 23, 29, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(clickableSpan, 23, 30, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         binding.dontHaveAnAccount.setText(spannableString);
         binding.dontHaveAnAccount.setMovementMethod(LinkMovementMethod.getInstance());
     }

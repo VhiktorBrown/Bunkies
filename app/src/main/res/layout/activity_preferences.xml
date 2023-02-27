@@ -13,9 +13,9 @@
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:tint="@color/black" />
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:tint="@color/textGrey" />
 
     <TextView
         android:id="@+id/title_text"
@@ -26,9 +26,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/go_back"
         app:layout_constraintStart_toEndOf="@+id/go_back"
         android:layout_marginStart="@dimen/_10sdp"
-        android:textSize="@dimen/_14ssp"
-        android:textColor="@color/textGrey"
-        android:fontFamily="@font/montserrat_regular" />
+        android:textSize="@dimen/_16ssp"
+        android:fontFamily="@font/montserrat_semi_bold" />
 
     <TextView
         android:id="@+id/choose_marital_status_text"
@@ -91,7 +90,7 @@
         app:layout_constraintStart_toStartOf="@+id/go_back"
         app:layout_constraintTop_toBottomOf="@+id/marital_status_radio_group"
         android:layout_marginTop="@dimen/_10sdp"
-        android:textSize="@dimen/_12ssp"
+        android:textSize="@dimen/_14ssp"
         android:fontFamily="@font/montserrat_regular"
         android:textColor="@color/textGrey" />
 
@@ -201,15 +200,85 @@
         android:fontFamily="@font/montserrat_regular"
         android:textColor="@color/textGrey" />
 
-    <SeekBar
-        android:id="@+id/age_seek_bar"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/from_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="From:"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:layout_constraintTop_toTopOf="@+id/from"
+        app:layout_constraintBottom_toBottomOf="@+id/from"
+        app:layout_constraintStart_toStartOf="@+id/go_back"
+        app:layout_constraintTop_toBottomOf="@+id/choose_age_range_text"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:textSize="@dimen/_14ssp" />
+
+    <EditText
+        android:id="@+id/from"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_30sdp"
+        app:layout_constraintStart_toEndOf="@+id/from_text"
+        app:layout_constraintTop_toBottomOf="@+id/choose_age_range_text"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:hint="Start Age"
+        android:inputType="number"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:background="@drawable/secondary_button"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_10ssp" />
+
+    <EditText
+        android:id="@+id/to"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_30sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choose_age_range_text"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:hint="End Age"
+        android:inputType="number"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:background="@drawable/secondary_button"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_10ssp" />
+
+    <TextView
+        android:id="@+id/to_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To:"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="@+id/to"
+        app:layout_constraintBottom_toBottomOf="@+id/to"
+        app:layout_constraintEnd_toStartOf="@+id/to"
+        app:layout_constraintTop_toBottomOf="@+id/choose_age_range_text"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:textSize="@dimen/_14ssp" />
+
+    <!--<TextView
+        android:id="@+id/start_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintStart_toStartOf="@+id/age_seek_bar"
+        app:layout_constraintTop_toBottomOf="@+id/age_seek_bar"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:textSize="@dimen/_20ssp"
+        android:fontFamily="@font/montserrat_semi_bold" />
+
+    <com.yahoo.mobile.client.android.util.rangeseekbar.RangeSeekBar
+        android:id="@+id/range_seek_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:singleThumb="false"
+        app:absoluteMinValue="15"
+        app:absoluteMaxValue="55"
         app:layout_constraintStart_toStartOf="@+id/go_back"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="@dimen/_20sdp"
-        app:layout_constraintTop_toBottomOf="@id/choose_age_range_text"
-        android:layout_marginTop="@dimen/_10sdp" />
+        app:layout_constraintTop_toBottomOf="@+id/start_range"
+        android:progressDrawable="@drawable/custom_progress_bg"/>-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/proceed_button"

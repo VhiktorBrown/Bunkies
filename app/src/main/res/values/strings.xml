@@ -9,4 +9,7 @@
     <string name="gender_preference">Tell us your gender_preference</string>
     <string name="occupational_reference">Tell us your occupational preference</string>
     <string name="proceed">Proceed</string>
+    <string name="go_back">go back</string>
+    <string name="personal_traits">Personal Traits</string>
+    <string name="personal_interests">Personal Interests</string>
 </resources>

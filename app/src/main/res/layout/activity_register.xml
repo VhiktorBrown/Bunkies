@@ -67,7 +67,7 @@
             android:textColor="@color/black"
             android:fontFamily="@font/montserrat_regular"
             android:inputType="textEmailAddress"
-            android:hint="@string/enter_email_address" />
+            android:hint="Full Name" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -139,6 +139,7 @@
         android:background="@drawable/primary_button"
         android:layout_marginTop="@dimen/_10sdp"
         android:text="@string/sign_up"
+        android:fontFamily="@font/montserrat_regular"
         android:textColor="@color/secondary"
         android:textAllCaps="false"
         android:textSize="@dimen/_14ssp" />
