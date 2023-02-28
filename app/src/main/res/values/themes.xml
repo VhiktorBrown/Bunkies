@@ -23,6 +23,12 @@
         <item name="rippleColor">@android:color/transparent</item>
     </style>
 
+    <style name="TextStyle" parent="TextAppearance.AppCompat.Small">
+        <item name="android:fontFamily">@font/montserrat_semi_bold</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColor">@color/textGrey</item>
+    </style>
+
     <!-- Disabling elevation overlays because when chip's default background/surface
          composite are combined with elevation overlays in a highly elevated dialog,
          the resulting color becomes too light and causes contrast
