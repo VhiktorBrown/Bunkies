@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.chip.Chip;
+import com.theelitedevelopers.bunkies.R;
 import com.theelitedevelopers.bunkies.databinding.ActivityPersonalTraitsBinding;
 import com.theelitedevelopers.bunkies.ui.account_setup.personal.models.Trait;
 
@@ -22,6 +23,32 @@ public class PersonalTraitsActivity extends AppCompatActivity {
         binding = ActivityPersonalTraitsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        traits.add(new Trait("Hardworking"));
+        traits.add(new Trait("Peaceful"));
+        traits.add(new Trait("Relaxed"));
+        traits.add(new Trait("Clean"));
+        traits.add(new Trait("Diligent"));
+        traits.add(new Trait("Organised"));
+        traits.add(new Trait("Communicative"));
+        traits.add(new Trait("Active"));
+        traits.add(new Trait("Sensitive"));
+        traits.add(new Trait("Honest"));
+        traits.add(new Trait("Responsible"));
+        traits.add(new Trait("With a sense of humour"));
+        traits.add(new Trait("Generous"));
+        traits.add(new Trait("Creative"));
+        traits.add(new Trait("Perceptive"));
+        traits.add(new Trait("Tolerant"));
+        traits.add(new Trait("Mature"));
+        traits.add(new Trait("Fun"));
+        traits.add(new Trait("Social"));
+
+
+        addChips();
+
+        binding.goBack.setOnClickListener(v -> {
+            onBackPressed();
+        });
 
         binding.proceedButton.setOnClickListener(v -> {
             getSelectedChips();
@@ -30,8 +57,11 @@ public class PersonalTraitsActivity extends AppCompatActivity {
     }
 
     private void addChips(){
-        Chip chip = new Chip(this);
-        
+        for(Trait trait : traits){
+            Chip chip = (Chip) getLayoutInflater().inflate(R.layout.custom_chip_layout, binding.chipGroup, false);
+            chip.setText(trait.getTraitName());
+            binding.chipGroup.addView(chip);
+        }
     }
 
     private void getSelectedChips(){

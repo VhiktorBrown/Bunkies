@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/secondary"
     tools:context=".ui.account_setup.preferences.PreferencesActivity">
 
     <ImageView
@@ -27,6 +28,7 @@
         app:layout_constraintStart_toEndOf="@+id/go_back"
         android:layout_marginStart="@dimen/_10sdp"
         android:textSize="@dimen/_16ssp"
+        android:textColor="@color/textColor2"
         android:fontFamily="@font/montserrat_semi_bold" />
 
     <TextView
@@ -200,59 +202,49 @@
         android:fontFamily="@font/montserrat_regular"
         android:textColor="@color/textGrey" />
 
+    <com.mohammedalaa.seekbar.DoubleValueSeekBarView
+        android:id="@+id/double_range_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choose_age_range_text"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:r2CurrentMaxValue="40"
+        app:r2CurrentMinValue="15"
+        app:r2barHeight="@dimen/_6sdp"
+        app:r2baseColor="@color/textColor2"
+        app:r2circleFillColor="@color/primary"
+        app:r2circleRadius="@dimen/_10sdp"
+        app:r2circleTextColor="@color/white"
+        app:r2circleTextSize="@dimen/value_bar_circleTextSize"
+        app:r2fillColor="@color/primary"
+        app:r2maxValue="80"
+        app:r2maxValueStep="1"
+        app:r2minValue="10"
+        app:r2minValueStep="1" />
+
     <TextView
-        android:id="@+id/from_text"
+        android:id="@+id/start_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="From:"
-        android:layout_marginEnd="@dimen/_5sdp"
-        app:layout_constraintTop_toTopOf="@+id/from"
-        app:layout_constraintBottom_toBottomOf="@+id/from"
-        app:layout_constraintStart_toStartOf="@+id/go_back"
-        app:layout_constraintTop_toBottomOf="@+id/choose_age_range_text"
+        android:text="15"
+        app:layout_constraintStart_toStartOf="@+id/double_range_seekbar"
+        app:layout_constraintTop_toBottomOf="@+id/double_range_seekbar"
+        android:layout_marginStart="@dimen/_10sdp"
         android:fontFamily="@font/montserrat_semi_bold"
         android:textSize="@dimen/_14ssp" />
 
-    <EditText
-        android:id="@+id/from"
-        android:layout_width="@dimen/_70sdp"
-        android:layout_height="@dimen/_30sdp"
-        app:layout_constraintStart_toEndOf="@+id/from_text"
-        app:layout_constraintTop_toBottomOf="@+id/choose_age_range_text"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:hint="Start Age"
-        android:inputType="number"
-        android:fontFamily="@font/montserrat_semi_bold"
-        android:background="@drawable/secondary_button"
-        android:padding="@dimen/_10sdp"
-        android:textSize="@dimen/_10ssp" />
-
-    <EditText
-        android:id="@+id/to"
-        android:layout_width="@dimen/_70sdp"
-        android:layout_height="@dimen/_30sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/choose_age_range_text"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:hint="End Age"
-        android:inputType="number"
-        android:fontFamily="@font/montserrat_semi_bold"
-        android:background="@drawable/secondary_button"
-        android:padding="@dimen/_10sdp"
-        android:textSize="@dimen/_10ssp" />
-
     <TextView
-        android:id="@+id/to_text"
+        android:id="@+id/end_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To:"
+        android:text="45"
         android:layout_marginEnd="@dimen/_10sdp"
-        app:layout_constraintTop_toTopOf="@+id/to"
-        app:layout_constraintBottom_toBottomOf="@+id/to"
-        app:layout_constraintEnd_toStartOf="@+id/to"
-        app:layout_constraintTop_toBottomOf="@+id/choose_age_range_text"
+        app:layout_constraintEnd_toEndOf="@+id/double_range_seekbar"
+        app:layout_constraintTop_toBottomOf="@+id/double_range_seekbar"
         android:fontFamily="@font/montserrat_semi_bold"
         android:textSize="@dimen/_14ssp" />
 

@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bunkies">
         <activity
+            android:name=".ui.account_setup.profile.SetupProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.account_setup.living_choices_habits.LivingHabitsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.account_setup.living_choices_habits.LivingChoicesActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.account_setup.personal.PersonalHabitsActivity"
             android:exported="true" />
         <activity
@@ -22,7 +31,7 @@
             android:name=".ui.account_setup.preferences.PreferencesActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.splashscreen.Splashscreen"
+            android:name=".modules.splashscreen.Splashscreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,16 +40,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.login.LoginActivity"
+            android:name=".ui.authentication.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.register.RegisterActivity"
+            android:name=".ui.authentication.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.onboarding.OnBoardingActivity"
+            android:name=".modules.onboarding.OnBoardingActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".modules.main.MainActivity"
             android:exported="true" />
     </application>
 

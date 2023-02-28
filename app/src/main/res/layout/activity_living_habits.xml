@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondary"
+    tools:context=".ui.account_setup.living_choices_habits.LivingHabitsActivity">
+
+    <ImageView
+        android:id="@+id/go_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        app:tint="@color/textGrey"
+        android:contentDescription="@string/go_back"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/living_habits"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/go_back"
+        app:layout_constraintBottom_toBottomOf="@+id/go_back"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@color/textColor2"
+        android:fontFamily="@font/montserrat_semi_bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/go_back"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/clean_your_room_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How Often Do You Clean Your Room?"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/textColor2"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/_20sdp" />
+
+            <RadioGroup
+                android:id="@+id/clean_your_room_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/clean_your_room_question"
+                app:layout_constraintTop_toBottomOf="@+id/clean_your_room_question">
+
+                <RadioButton
+                    android:id="@+id/month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Once A Month"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+                <RadioButton
+                    android:id="@+id/week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Once A Week"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+                <RadioButton
+                    android:id="@+id/frequently"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Frequently"
+                    android:checked="true"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/visitors_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How Often Do You Have visitors?"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="@+id/clean_your_room_question"
+                app:layout_constraintTop_toBottomOf="@+id/clean_your_room_radio_group"
+                android:layout_marginTop="@dimen/_10sdp" />
+
+            <RadioGroup
+                android:id="@+id/visitors_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/clean_your_room_question"
+                app:layout_constraintTop_toBottomOf="@+id/visitors_question">
+
+                <RadioButton
+                    android:id="@+id/visitors_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Once A Week"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+                <RadioButton
+                    android:id="@+id/visitors_few_days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Every Few Days"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+                <RadioButton
+                    android:id="@+id/visitors_never"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Never"
+                    android:checked="true"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/visitors_how_long_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How Long Do They Stay?"
+                android:textColor="@color/textColor2"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@+id/clean_your_room_question"
+                app:layout_constraintTop_toBottomOf="@+id/visitors_radio_group"
+                android:layout_marginTop="@dimen/_10sdp" />
+
+            <RadioGroup
+                android:id="@+id/visitors_how_long_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/clean_your_room_question"
+                app:layout_constraintTop_toBottomOf="@+id/visitors_how_long_question">
+
+                <RadioButton
+                    android:id="@+id/visitors_how_long_overnight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Overnight"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+                <RadioButton
+                    android:id="@+id/visitors_how_long_few_days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A Few Days"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+                <RadioButton
+                    android:id="@+id/visitors_how_long_few_hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A Few Hours"
+                    android:checked="true"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/do_you_smoke_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/smoking_question"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="@+id/clean_your_room_question"
+                app:layout_constraintTop_toBottomOf="@+id/visitors_how_long_radio_group"
+                android:layout_marginTop="@dimen/_10sdp" />
+
+            <RadioGroup
+                android:id="@+id/smoke_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/clean_your_room_question"
+                app:layout_constraintTop_toBottomOf="@+id/do_you_smoke_question">
+
+                <RadioButton
+                    android:id="@+id/smoke_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+                <RadioButton
+                    android:id="@+id/smoke_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+                <RadioButton
+                    android:id="@+id/smoke_sometimes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sometimes"
+                    android:checked="true"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/food_choice_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/food_choice_question"
+                android:textColor="@color/textColor2"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@+id/clean_your_room_question"
+                app:layout_constraintTop_toBottomOf="@+id/smoke_radio_group"
+                android:layout_marginTop="@dimen/_10sdp" />
+
+            <RadioGroup
+                android:id="@+id/food_choice_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintBottom_toTopOf="@+id/proceed_button"
+                app:layout_constraintStart_toStartOf="@+id/clean_your_room_question"
+                app:layout_constraintTop_toBottomOf="@+id/food_choice_question">
+
+                <RadioButton
+                    android:id="@+id/food_choice_vegan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vegan"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+                <RadioButton
+                    android:id="@+id/food_choice_non_vegan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Non-Vegan"
+                    android:checked="true"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/proceed_button"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintStart_toStartOf="@+id/clean_your_room_question"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:background="@drawable/primary_button"
+                android:text="@string/proceed"
+                android:textSize="@dimen/_14ssp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/secondary" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.theelitedevelopers.bunkies.ui.onboarding;
+package com.theelitedevelopers.bunkies.modules.onboarding;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
@@ -12,8 +12,8 @@ import android.widget.LinearLayout;
 
 import com.theelitedevelopers.bunkies.R;
 import com.theelitedevelopers.bunkies.databinding.ActivityOnboardingBinding;
-import com.theelitedevelopers.bunkies.ui.login.LoginActivity;
-import com.theelitedevelopers.bunkies.ui.onboarding.adapter.OnboardScreenPagerAdapter;
+import com.theelitedevelopers.bunkies.ui.authentication.LoginActivity;
+import com.theelitedevelopers.bunkies.modules.onboarding.adapter.OnboardScreenPagerAdapter;
 
 public class OnBoardingActivity extends AppCompatActivity {
     ActivityOnboardingBinding binding;

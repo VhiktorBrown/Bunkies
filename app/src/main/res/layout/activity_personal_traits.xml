@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/secondary"
     tools:context=".ui.account_setup.personal.PersonalTraitsActivity">
 
     <ImageView
@@ -15,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginStart="@dimen/_20sdp"
-        app:tint="@color/textGrey"
+        app:tint="@color/textColor2"
         android:contentDescription="@string/go_back"/>
 
     <TextView
@@ -28,6 +29,7 @@
         app:layout_constraintTop_toTopOf="@+id/go_back"
         app:layout_constraintBottom_toBottomOf="@+id/go_back"
         android:textSize="@dimen/_16ssp"
+        android:textColor="@color/textColor2"
         android:fontFamily="@font/montserrat_semi_bold" />
 
     <androidx.constraintlayout.widget.ConstraintLayout

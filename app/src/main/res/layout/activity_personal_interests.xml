@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/secondary"
     tools:context=".ui.account_setup.personal.PersonalTraitsActivity">
 
     <ImageView
@@ -15,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginStart="@dimen/_20sdp"
-        app:tint="@color/textGrey"
+        app:tint="@color/textColor2"
         android:contentDescription="@string/go_back"/>
 
     <TextView
@@ -28,6 +29,7 @@
         app:layout_constraintTop_toTopOf="@+id/go_back"
         app:layout_constraintBottom_toBottomOf="@+id/go_back"
         android:textSize="@dimen/_16ssp"
+        android:textColor="@color/textColor2"
         android:fontFamily="@font/montserrat_semi_bold" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,239 +52,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="@dimen/_20sdp">
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/music"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Music"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/photography"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Photography"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/swimming"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Swimming"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/fashion"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Fashion"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/blogging"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Blogging"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/shopping"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Shopping"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/writing"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Writing"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/sports"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Sports"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/hiking"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Responsible"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_sense_of_humour"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Hiking"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/cooking"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Cooking"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/netflix_and_chills"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Netflix and Chills"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/playing_instruments"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Playing instruments"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/reading"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Reading"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/taking_strolls"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Taking strolls"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/making_new_friends"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Making new friends"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/doing_chores"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Doing chores"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/acting"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_35sdp"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/montserrat_regular"
-                style="@style/customChipStyle"
-                android:text="Acting"/>
 
 
         </com.google.android.material.chip.ChipGroup>

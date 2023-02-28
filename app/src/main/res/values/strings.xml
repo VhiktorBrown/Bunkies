@@ -12,4 +12,15 @@
     <string name="go_back">go back</string>
     <string name="personal_traits">Personal Traits</string>
     <string name="personal_interests">Personal Interests</string>
+    <string name="personal_habits">Personal Habits</string>
+    <string name="clean_freak_question">Are you a clean freak?</string>
+    <string name="party_animal_question">Are you a party animal?</string>
+    <string name="pets_question">Are you okay with pets?</string>
+    <string name="smoking_question">Is smoking acceptable?</string>
+    <string name="living_habits">Living Habits</string>
+    <string name="food_choice_question">What is Your Food Choice?</string>
+    <string name="share_a_toilet_question">Would You Share A Toilet?</string>
+    <string name="neighbourhood">Neighbourhood</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

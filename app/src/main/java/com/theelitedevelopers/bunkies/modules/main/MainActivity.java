@@ -1,8 +1,10 @@
-package com.theelitedevelopers.bunkies;
+package com.theelitedevelopers.bunkies.modules.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.theelitedevelopers.bunkies.R;
 
 public class MainActivity extends AppCompatActivity {
 

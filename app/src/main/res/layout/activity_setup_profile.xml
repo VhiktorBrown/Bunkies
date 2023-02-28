@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondary"
+    tools:context=".ui.account_setup.profile.SetupProfileActivity">
+
+    <ImageView
+        android:id="@+id/go_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        app:tint="@color/textGrey"
+        android:contentDescription="@string/go_back"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set up your Profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/go_back"
+        app:layout_constraintBottom_toBottomOf="@+id/go_back"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@color/textColor2"
+        android:fontFamily="@font/montserrat_semi_bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/go_back"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/add_a_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add a Photo"
+                android:textColor="@color/textGrey"
+                android:fontFamily="@font/montserrat_semi_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:src="@drawable/ic_camera"
+                android:tint="@color/textColor2"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_a_photo"
+                app:civ_border_color="@color/textColor2"
+                app:civ_border_width="@dimen/_1sdp" />
+
+            <TextView
+                android:id="@+id/full_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Full Name"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_image"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/full_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/full_name_text"
+                app:layout_constraintTop_toBottomOf="@+id/full_name_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:hint="Enter Full Name"
+                android:textSize="@dimen/_12ssp"
+                android:textColorHint="@color/textGrey"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp" />
+
+            <TextView
+                android:id="@+id/date_of_birth_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date of Birth"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/full_name"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/date_of_birth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/date_of_birth_text"
+                app:layout_constraintTop_toBottomOf="@+id/date_of_birth_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:hint="DD/MM/YYYY"
+                android:drawablePadding="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:textColorHint="@color/textGrey"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:drawableEndCompat="@drawable/ic_arrow_down"
+                app:drawableTint="@color/textGrey" />
+
+            <TextView
+                android:id="@+id/gender_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:textColor="@color/textColor2"
+                app:layout_constraintTop_toBottomOf="@+id/date_of_birth"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/gender_text"
+                app:layout_constraintTop_toBottomOf="@+id/gender_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:textColorHint="@color/textGrey"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:drawableEndCompat="@drawable/ic_arrow_down"
+                app:drawableTint="@color/textGrey"
+                app:drawableStartCompat="@drawable/ic_person" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/hostel_text"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Hostel Name (if you have)"-->
+<!--                android:textColor="@color/textColor2"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                android:layout_marginStart="@dimen/_20sdp"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/profile_image"-->
+<!--                android:fontFamily="@font/montserrat_semi_bold"-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                android:textSize="@dimen/_12ssp" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/full_name"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/full_name_text"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/full_name_text"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:layout_marginEnd="@dimen/_20sdp"-->
+<!--                android:hint="Enter Full Name"-->
+<!--                android:textSize="@dimen/_12ssp"-->
+<!--                android:textColorHint="@color/textGrey"-->
+<!--                android:fontFamily="@font/montserrat_regular"-->
+<!--                android:background="@drawable/edit_text_background"-->
+<!--                android:padding="@dimen/_10sdp"-->
+<!--                android:layout_marginTop="@dimen/_3sdp" />-->
+
+            <TextView
+                android:id="@+id/location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/gender"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/location_text"
+                app:layout_constraintTop_toBottomOf="@+id/location_text"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:hint="City"
+                android:textColorHint="@color/textColor2"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:drawableEndCompat="@drawable/ic_arrow_down"
+                app:drawableTint="@color/textGrey"
+                app:drawableStartCompat="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/neighbourhood"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/location_text"
+                app:layout_constraintStart_toEndOf="@+id/city"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:hint="@string/neighbourhood"
+                android:textColorHint="@color/textGrey"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:drawableEndCompat="@drawable/ic_arrow_down"
+                app:drawableTint="@color/textGrey" />
+
+            <TextView
+                android:id="@+id/occupation_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What is Your Occupation?"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/neighbourhood"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/occupation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/occupation_text"
+                app:layout_constraintTop_toBottomOf="@+id/occupation_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:hint="Tell us your occupation"
+                android:textColorHint="@color/textGrey"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:drawableEndCompat="@drawable/ic_arrow_down"
+                app:drawableTint="@color/textGrey" />
+
+            <TextView
+                android:id="@+id/bio_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add a Bio"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/occupation"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/bio"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                app:layout_constraintStart_toStartOf="@+id/full_name_text"
+                app:layout_constraintTop_toBottomOf="@+id/bio_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/save_button"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:hint="Tell us about Yourself."
+                android:textAlignment="gravity"
+                android:gravity="start"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:textColorHint="@color/textGrey"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/save_button"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/full_name_text"
+                app:layout_constraintTop_toBottomOf="@+id/bio"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/primary_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/montserrat_semi_bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/proceed_button"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/bio"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@drawable/secondary_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/proceed"
+                android:textColor="@color/primary"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/montserrat_semi_bold" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

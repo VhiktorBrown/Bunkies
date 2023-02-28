@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondary"
+    tools:context=".ui.account_setup.living_choices_habits.LivingChoicesActivity">
+
+    <ImageView
+        android:id="@+id/go_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        app:tint="@color/textGrey"
+        android:contentDescription="@string/go_back"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/living_habits"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/go_back"
+        app:layout_constraintBottom_toBottomOf="@+id/go_back"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@color/textColor2"
+        android:fontFamily="@font/montserrat_semi_bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/go_back"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/choose_rent_range_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose A Preferred Rent Range"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/textColor2" />
+
+            <com.mohammedalaa.seekbar.DoubleValueSeekBarView
+                android:id="@+id/double_range_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/choose_rent_range_text"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:r2CurrentMaxValue="40"
+                app:r2CurrentMinValue="15"
+                app:r2barHeight="@dimen/_6sdp"
+                app:r2baseColor="@color/textColor2"
+                app:r2circleFillColor="@color/primary"
+                app:r2circleRadius="@dimen/_10sdp"
+                app:r2circleTextColor="@color/white"
+                app:r2circleTextSize="@dimen/value_bar_circleTextSize"
+                app:r2fillColor="@color/primary"
+                app:r2maxValue="80"
+                app:r2maxValueStep="1"
+                app:r2minValue="10"
+                app:r2minValueStep="1" />
+
+            <TextView
+                android:id="@+id/start_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100,000"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="@+id/double_range_seekbar"
+                app:layout_constraintTop_toBottomOf="@+id/double_range_seekbar"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/end_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="400,000"
+                android:textColor="@color/textColor2"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@+id/double_range_seekbar"
+                app:layout_constraintTop_toBottomOf="@+id/double_range_seekbar"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/how_many_people_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How Many People Are You Looking for?"
+                app:layout_constraintStart_toStartOf="@+id/choose_rent_range_text"
+                app:layout_constraintTop_toBottomOf="@+id/start_age"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/textColor2" />
+
+            <TextView
+                android:id="@+id/one_person"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:text="1"
+                android:fontFamily="@font/montserrat_semi_bold"
+                app:layout_constraintStart_toStartOf="@+id/choose_rent_range_text"
+                app:layout_constraintTop_toBottomOf="@+id/how_many_people_text"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:background="@drawable/textview_background"
+                android:textAlignment="gravity"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/two_people"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:text="2"
+                android:fontFamily="@font/montserrat_semi_bold"
+                app:layout_constraintStart_toEndOf="@+id/one_person"
+                app:layout_constraintEnd_toStartOf="@+id/three_people"
+                app:layout_constraintTop_toBottomOf="@+id/how_many_people_text"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/selected_textview_background"
+                android:textAlignment="gravity"
+                android:textColor="@color/secondary"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/three_people"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:text="3"
+                android:fontFamily="@font/montserrat_semi_bold"
+                app:layout_constraintStart_toEndOf="@+id/two_people"
+                app:layout_constraintEnd_toStartOf="@+id/four_and_more_person"
+                app:layout_constraintTop_toBottomOf="@+id/how_many_people_text"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/textview_background"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/four_and_more_person"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:text="4+"
+                android:fontFamily="@font/montserrat_semi_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/how_many_people_text"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@drawable/textview_background"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/pets_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pets?"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="@+id/choose_rent_range_text"
+                app:layout_constraintTop_toBottomOf="@+id/one_person"
+                android:layout_marginTop="@dimen/_20sdp" />
+
+            <RadioGroup
+                android:id="@+id/pets_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/choose_rent_range_text"
+                app:layout_constraintTop_toBottomOf="@+id/pets_text">
+
+                <RadioButton
+                    android:id="@+id/pets_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    android:checked="true"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+                <RadioButton
+                    android:id="@+id/pets_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/share_a_toilet_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/share_a_toilet_question"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="@+id/choose_rent_range_text"
+                app:layout_constraintTop_toBottomOf="@+id/pets_radio_group"
+                android:layout_marginTop="@dimen/_10sdp" />
+
+            <RadioGroup
+                android:id="@+id/share_a_toilet_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/choose_rent_range_text"
+                app:layout_constraintTop_toBottomOf="@+id/share_a_toilet_question">
+
+                <RadioButton
+                    android:id="@+id/share_a_toilet_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+                <RadioButton
+                    android:id="@+id/share_a_toilet_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/textColor2" />
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/proceed_button"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintStart_toStartOf="@+id/choose_rent_range_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:background="@drawable/primary_button"
+                android:text="@string/proceed"
+                android:textSize="@dimen/_14ssp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/secondary" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

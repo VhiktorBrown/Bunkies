@@ -1,4 +1,4 @@
-package com.theelitedevelopers.bunkies.ui.register;
+package com.theelitedevelopers.bunkies.ui.authentication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,29 +13,27 @@ import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
 
-import com.theelitedevelopers.bunkies.R;
-import com.theelitedevelopers.bunkies.databinding.ActivityRegisterBinding;
+import com.theelitedevelopers.bunkies.databinding.ActivityLoginBinding;
 import com.theelitedevelopers.bunkies.ui.account_setup.preferences.PreferencesActivity;
-import com.theelitedevelopers.bunkies.ui.login.LoginActivity;
 
-public class RegisterActivity extends AppCompatActivity {
-    ActivityRegisterBinding binding;
+public class LoginActivity extends AppCompatActivity {
+    ActivityLoginBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityRegisterBinding.inflate(getLayoutInflater());
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.signUpButton.setOnClickListener(v -> {
+        binding.logInButton.setOnClickListener(v -> {
             startActivity(new Intent(this, PreferencesActivity.class));
             finishAffinity();
         });
 
-        SpannableString spannableString = new SpannableString("Already have an account? Log in");
+        SpannableString spannableString = new SpannableString("Don't have an account? Sign up");
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(@NonNull View view) {
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
                 finish();
             }
 
@@ -47,8 +45,8 @@ public class RegisterActivity extends AppCompatActivity {
             }
         };
 
-        spannableString.setSpan(clickableSpan, 25, 31, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        binding.alreadyHaveAnAccount.setText(spannableString);
-        binding.alreadyHaveAnAccount.setMovementMethod(LinkMovementMethod.getInstance());
+        spannableString.setSpan(clickableSpan, 23, 30, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        binding.dontHaveAnAccount.setText(spannableString);
+        binding.dontHaveAnAccount.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }

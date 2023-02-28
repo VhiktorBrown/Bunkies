@@ -1,4 +1,4 @@
-package com.theelitedevelopers.bunkies.ui.onboarding.adapter;
+package com.theelitedevelopers.bunkies.modules.onboarding.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
