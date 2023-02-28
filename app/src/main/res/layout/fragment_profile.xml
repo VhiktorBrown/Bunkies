@@ -3,12 +3,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/secondary"
     tools:context=".modules.main.profile.fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:src="@drawable/bunkies_onboarding_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/_40sdp"/>
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Richard Brandson"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:id="@+id/edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_name"
+            android:text="Edit Profile"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/textGrey"
+            android:textSize="@dimen/_14ssp"
+            android:drawablePadding="@dimen/_10sdp"
+            app:drawableStartCompat="@drawable/ic_edit"
+            app:drawableTint="@color/textGrey" />
+
+        <TextView
+            android:id="@+id/my_listing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_profile"
+            android:text="My Listing"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textStyle="bold"
+            android:textColor="@color/textGrey"
+            android:textSize="@dimen/_14ssp"
+            android:drawablePadding="@dimen/_10sdp"
+            app:drawableStartCompat="@drawable/ic_listing"
+            app:drawableTint="@color/textGrey" />
+
+        <TextView
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_listing"
+            android:text="Settings"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textStyle="bold"
+            android:textColor="@color/textGrey"
+            android:textSize="@dimen/_14ssp"
+            android:drawablePadding="@dimen/_10sdp"
+            app:drawableStartCompat="@drawable/ic_settings"
+            app:drawableTint="@color/textGrey" />
+
+        <TextView
+            android:id="@+id/log_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settings"
+            android:text="Log out"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_14ssp"
+            android:drawablePadding="@dimen/_10sdp"
+            app:drawableStartCompat="@drawable/ic_logout"
+            app:drawableTint="@color/primary" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

@@ -57,22 +57,22 @@ public class HomeFragment extends Fragment {
     }
 
     private void setUpDummyLists(){
-        rooms.add(new RoomDetails(""));
-        rooms.add(new RoomDetails(""));
-        rooms.add(new RoomDetails(""));
-        rooms.add(new RoomDetails(""));
-        rooms.add(new RoomDetails(""));
-        rooms.add(new RoomDetails(""));
-        rooms.add(new RoomDetails(""));
+        rooms.add(new RoomDetails(null));
+        rooms.add(new RoomDetails(null));
+        rooms.add(new RoomDetails(null));
+        rooms.add(new RoomDetails(null));
+        rooms.add(new RoomDetails(null));
+        rooms.add(new RoomDetails(null));
+        rooms.add(new RoomDetails(null));
 
 
-        roommates.add(new Roommate(""));
-        roommates.add(new Roommate(""));
-        roommates.add(new Roommate(""));
-        roommates.add(new Roommate(""));
-        roommates.add(new Roommate(""));
-        roommates.add(new Roommate(""));
-        roommates.add(new Roommate(""));
-        roommates.add(new Roommate(""));
+        roommates.add(new Roommate(null));
+        roommates.add(new Roommate(null));
+        roommates.add(new Roommate(null));
+        roommates.add(new Roommate(null));
+        roommates.add(new Roommate(null));
+        roommates.add(new Roommate(null));
+        roommates.add(new Roommate(null));
+        roommates.add(new Roommate(null));
     }
 }

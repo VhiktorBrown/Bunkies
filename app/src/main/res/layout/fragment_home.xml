@@ -28,6 +28,7 @@
             android:layout_marginTop="@dimen/_20sdp"
             android:fontFamily="@font/montserrat_semi_bold"
             android:textSize="@dimen/_12ssp"
+            android:textColor="@color/textColor2"
             app:layout_constraintEnd_toEndOf="parent"
             android:textAlignment="gravity"
             android:gravity="start"
@@ -54,7 +55,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="@dimen/_10sdp"
             android:orientation="horizontal"
-            android:scrollbars="horizontal"
+            android:scrollbars="none"
             android:layout_marginTop="@dimen/_10sdp"/>
 
         <View
@@ -65,13 +66,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/explore_campuses_recycler_view"
             android:background="@color/textGrey"
+            android:visibility="gone"
             android:layout_marginTop="@dimen/_10sdp" />
 
         <TextView
             android:id="@+id/featured_rooms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Featured rooms"
+            android:text="Featured Rooms"
             app:layout_constraintStart_toStartOf="@+id/home_message"
             app:layout_constraintTop_toBottomOf="@+id/view_after_explore"
             android:layout_marginTop="@dimen/_20sdp"
@@ -99,13 +101,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rooms_recycler_view"
             android:background="@color/textGrey"
+            android:visibility="gone"
             android:layout_marginTop="@dimen/_10sdp" />
 
         <TextView
             android:id="@+id/available_roommates"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Available roommates"
+            android:text="Available Roommates"
             app:layout_constraintStart_toStartOf="@+id/home_message"
             app:layout_constraintTop_toBottomOf="@+id/view_after_rooms"
             android:layout_marginTop="@dimen/_20sdp"
@@ -123,6 +126,8 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:orientation="horizontal"
             android:scrollbars="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_10sdp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
