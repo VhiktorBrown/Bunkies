@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/secondary"
-    tools:context=".ui.account_setup.living_choices_habits.LivingChoicesActivity">
+    tools:context=".modules.account_setup.living_choices_habits.LivingChoicesActivity">
 
     <ImageView
         android:id="@+id/go_back"
@@ -68,19 +68,19 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                app:r2CurrentMaxValue="40"
-                app:r2CurrentMinValue="15"
-                app:r2barHeight="@dimen/_6sdp"
+                app:r2CurrentMaxValue="150000"
+                app:r2CurrentMinValue="100000"
+                app:r2barHeight="@dimen/_8sdp"
                 app:r2baseColor="@color/textColor2"
                 app:r2circleFillColor="@color/primary"
                 app:r2circleRadius="@dimen/_10sdp"
                 app:r2circleTextColor="@color/white"
                 app:r2circleTextSize="@dimen/value_bar_circleTextSize"
                 app:r2fillColor="@color/primary"
-                app:r2maxValue="80"
-                app:r2maxValueStep="1"
-                app:r2minValue="10"
-                app:r2minValueStep="1" />
+                app:r2maxValue="300000"
+                app:r2maxValueStep="1000"
+                app:r2minValue="10000"
+                app:r2minValueStep="1000" />
 
             <TextView
                 android:id="@+id/start_age"

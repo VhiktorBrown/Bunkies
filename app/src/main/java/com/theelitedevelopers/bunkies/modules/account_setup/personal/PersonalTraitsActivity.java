@@ -1,4 +1,4 @@
-package com.theelitedevelopers.bunkies.ui.account_setup.personal;
+package com.theelitedevelopers.bunkies.modules.account_setup.personal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,38 +7,42 @@ import android.os.Bundle;
 
 import com.google.android.material.chip.Chip;
 import com.theelitedevelopers.bunkies.R;
-import com.theelitedevelopers.bunkies.databinding.ActivityPersonalInterestsBinding;
-import com.theelitedevelopers.bunkies.ui.account_setup.personal.models.Trait;
+import com.theelitedevelopers.bunkies.databinding.ActivityPersonalTraitsBinding;
+import com.theelitedevelopers.bunkies.modules.account_setup.personal.models.Trait;
 
 import java.util.ArrayList;
 
-public class PersonalInterestsActivity extends AppCompatActivity {
-    ActivityPersonalInterestsBinding binding;
+public class PersonalTraitsActivity extends AppCompatActivity {
+    ActivityPersonalTraitsBinding binding;
     ArrayList<Trait> traits = new ArrayList<>();
     int count;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityPersonalInterestsBinding.inflate(getLayoutInflater());
+        binding = ActivityPersonalTraitsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        traits.add(new Trait("Music"));
-        traits.add(new Trait("Photography"));
-        traits.add(new Trait("Swimming"));
-        traits.add(new Trait("Fashion"));
-        traits.add(new Trait("Blogging"));
-        traits.add(new Trait("Shopping"));
-        traits.add(new Trait("Writing"));
-        traits.add(new Trait("Sports"));
-        traits.add(new Trait("Hiking"));
-        traits.add(new Trait("Cooking"));
-        traits.add(new Trait("Netflix and Chills"));
-        traits.add(new Trait("Playing instruments"));
-        traits.add(new Trait("Reading"));
-        traits.add(new Trait("Taking strolls"));
-        traits.add(new Trait("Making new friends"));
-        traits.add(new Trait("Doing chores"));
-        traits.add(new Trait("Acting"));
+        traits.add(new Trait("Hardworking"));
+        traits.add(new Trait("Peaceful"));
+        traits.add(new Trait("Relaxed"));
+        traits.add(new Trait("Clean"));
+        traits.add(new Trait("Diligent"));
+        traits.add(new Trait("Organised"));
+        traits.add(new Trait("Communicative"));
+        traits.add(new Trait("Active"));
+        traits.add(new Trait("Sensitive"));
+        traits.add(new Trait("Honest"));
+        traits.add(new Trait("Responsible"));
+        traits.add(new Trait("With a sense of humour"));
+        traits.add(new Trait("Generous"));
+        traits.add(new Trait("Creative"));
+        traits.add(new Trait("Perceptive"));
+        traits.add(new Trait("Tolerant"));
+        traits.add(new Trait("Mature"));
+        traits.add(new Trait("Fun"));
+        traits.add(new Trait("Social"));
+
 
         addChips();
 
@@ -48,9 +52,8 @@ public class PersonalInterestsActivity extends AppCompatActivity {
 
         binding.proceedButton.setOnClickListener(v -> {
             getSelectedChips();
-            startActivity(new Intent(this, PersonalHabitsActivity.class));
+            startActivity(new Intent(this, PersonalInterestsActivity.class));
         });
-
     }
 
     private void addChips(){

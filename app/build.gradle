@@ -48,6 +48,9 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
 
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     //Density Pixels for automatically assigning correct dimensions for UI components
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.intuit.ssp:ssp-android:1.0.6'

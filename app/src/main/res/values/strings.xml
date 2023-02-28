@@ -26,4 +26,5 @@
     <string name="home">Home</string>
     <string name="inbox">Inbox</string>
     <string name="profile">Profile</string>
+    <string name="verified">Verified</string>
 </resources>

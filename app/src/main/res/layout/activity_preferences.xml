@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/secondary"
-    tools:context=".ui.account_setup.preferences.PreferencesActivity">
+    tools:context=".modules.account_setup.preferences.PreferencesActivity">
 
     <ImageView
         android:id="@+id/go_back"

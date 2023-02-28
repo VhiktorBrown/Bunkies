@@ -1,4 +1,4 @@
-package com.theelitedevelopers.bunkies.ui.account_setup.preferences;
+package com.theelitedevelopers.bunkies.modules.account_setup.preferences;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.mohammedalaa.seekbar.DoubleValueSeekBarView;
 import com.mohammedalaa.seekbar.OnDoubleValueSeekBarChangeListener;
 import com.theelitedevelopers.bunkies.databinding.ActivityPreferencesBinding;
-import com.theelitedevelopers.bunkies.ui.account_setup.personal.PersonalTraitsActivity;
+import com.theelitedevelopers.bunkies.modules.account_setup.personal.PersonalTraitsActivity;
 
 public class PreferencesActivity extends AppCompatActivity {
     ActivityPreferencesBinding binding;

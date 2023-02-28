@@ -1,14 +1,21 @@
-package com.theelitedevelopers.bunkies.ui.account_setup.living_choices_habits;
+package com.theelitedevelopers.bunkies.modules.account_setup.living_choices_habits;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.mohammedalaa.seekbar.DoubleValueSeekBarView;
+import com.mohammedalaa.seekbar.OnDoubleValueSeekBarChangeListener;
 import com.theelitedevelopers.bunkies.R;
 import com.theelitedevelopers.bunkies.databinding.ActivityLivingChoicesBinding;
-import com.theelitedevelopers.bunkies.ui.account_setup.profile.SetupProfileActivity;
+import com.theelitedevelopers.bunkies.modules.account_setup.profile.SetupProfileActivity;
+
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class LivingChoicesActivity extends AppCompatActivity {
     ActivityLivingChoicesBinding binding;
@@ -86,5 +93,38 @@ public class LivingChoicesActivity extends AppCompatActivity {
         binding.proceedButton.setOnClickListener(v -> {
             startActivity(new Intent(this, SetupProfileActivity.class));
         });
+
+        binding.doubleRangeSeekbar.setCurrentMinValue(100000);
+        binding.doubleRangeSeekbar.setCurrentMinValue(150000);
+
+        binding.doubleRangeSeekbar.setOnRangeSeekBarViewChangeListener(new OnDoubleValueSeekBarChangeListener() {
+            @Override
+            public void onValueChanged(@Nullable DoubleValueSeekBarView doubleValueSeekBarView, int i, int i1, boolean b) {
+                binding.startAge.setText(NumberFormat.getNumberInstance(Locale.US).format(i));
+                binding.endAge.setText(NumberFormat.getNumberInstance(Locale.US).format(i1));
+
+                int diff = i1 - i;
+                if(diff <= 3){
+                    doubleValueSeekBarView.setEnabled(false);
+                    displayToastAndEnableBar();
+                }
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(@Nullable DoubleValueSeekBarView doubleValueSeekBarView, int i, int i1) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(@Nullable DoubleValueSeekBarView doubleValueSeekBarView, int i, int i1) {
+
+            }
+        });
+    }
+
+    private void displayToastAndEnableBar(){
+        Toast.makeText(this, "The age range difference should not be less than 3", Toast.LENGTH_SHORT).show();
+        binding.doubleRangeSeekbar.setEnabled(true);
     }
 }

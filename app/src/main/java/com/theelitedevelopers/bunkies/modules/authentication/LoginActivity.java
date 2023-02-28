@@ -1,4 +1,4 @@
-package com.theelitedevelopers.bunkies.ui.authentication;
+package com.theelitedevelopers.bunkies.modules.authentication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +14,7 @@ import android.text.style.ClickableSpan;
 import android.view.View;
 
 import com.theelitedevelopers.bunkies.databinding.ActivityLoginBinding;
-import com.theelitedevelopers.bunkies.ui.account_setup.preferences.PreferencesActivity;
+import com.theelitedevelopers.bunkies.modules.account_setup.preferences.PreferencesActivity;
 
 public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;

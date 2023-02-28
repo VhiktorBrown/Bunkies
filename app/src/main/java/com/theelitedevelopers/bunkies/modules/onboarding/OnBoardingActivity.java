@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 import com.theelitedevelopers.bunkies.R;
 import com.theelitedevelopers.bunkies.databinding.ActivityOnboardingBinding;
-import com.theelitedevelopers.bunkies.ui.authentication.LoginActivity;
+import com.theelitedevelopers.bunkies.modules.authentication.LoginActivity;
 import com.theelitedevelopers.bunkies.modules.onboarding.adapter.OnboardScreenPagerAdapter;
 
 public class OnBoardingActivity extends AppCompatActivity {

@@ -3,12 +3,130 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/secondary"
     tools:context=".modules.main.home.fragments.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/main_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/home_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Hi Richard! Let's help you find your roommate."
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAlignment="gravity"
+            android:gravity="start"
+            android:layout_marginEnd="@dimen/_30sdp" />
+
+        <TextView
+            android:id="@+id/explore_campuses_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Explore Campuses"
+            app:layout_constraintStart_toStartOf="@+id/home_message"
+            app:layout_constraintTop_toBottomOf="@+id/home_message"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:textColor="@color/textColor2"
+            android:textSize="@dimen/_14ssp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/explore_campuses_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/home_message"
+            app:layout_constraintTop_toBottomOf="@+id/explore_campuses_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            android:layout_marginTop="@dimen/_10sdp"/>
+
+        <View
+            android:id="@+id/view_after_explore"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/explore_campuses_recycler_view"
+            android:background="@color/textGrey"
+            android:layout_marginTop="@dimen/_10sdp" />
+
+        <TextView
+            android:id="@+id/featured_rooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Featured rooms"
+            app:layout_constraintStart_toStartOf="@+id/home_message"
+            app:layout_constraintTop_toBottomOf="@+id/view_after_explore"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:textColor="@color/textColor2"
+            android:textSize="@dimen/_14ssp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rooms_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/home_message"
+            app:layout_constraintTop_toBottomOf="@+id/featured_rooms"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            android:layout_marginTop="@dimen/_10sdp"/>
+
+        <View
+            android:id="@+id/view_after_rooms"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rooms_recycler_view"
+            android:background="@color/textGrey"
+            android:layout_marginTop="@dimen/_10sdp" />
+
+        <TextView
+            android:id="@+id/available_roommates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Available roommates"
+            app:layout_constraintStart_toStartOf="@+id/home_message"
+            app:layout_constraintTop_toBottomOf="@+id/view_after_rooms"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:textColor="@color/textColor2"
+            android:textSize="@dimen/_14ssp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/available_roommates_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/home_message"
+            app:layout_constraintTop_toBottomOf="@+id/available_roommates"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            android:layout_marginTop="@dimen/_10sdp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

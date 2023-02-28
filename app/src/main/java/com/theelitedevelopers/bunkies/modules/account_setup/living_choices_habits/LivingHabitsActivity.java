@@ -1,4 +1,4 @@
-package com.theelitedevelopers.bunkies.ui.account_setup.living_choices_habits;
+package com.theelitedevelopers.bunkies.modules.account_setup.living_choices_habits;
 
 import androidx.appcompat.app.AppCompatActivity;
 

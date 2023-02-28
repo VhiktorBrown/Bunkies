@@ -1,4 +1,4 @@
-package com.theelitedevelopers.bunkies.ui.account_setup.personal;
+package com.theelitedevelopers.bunkies.modules.account_setup.personal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.theelitedevelopers.bunkies.databinding.ActivityPersonalHabitsBinding;
-import com.theelitedevelopers.bunkies.ui.account_setup.living_choices_habits.LivingHabitsActivity;
+import com.theelitedevelopers.bunkies.modules.account_setup.living_choices_habits.LivingHabitsActivity;
 
 public class PersonalHabitsActivity extends AppCompatActivity {
     ActivityPersonalHabitsBinding binding;

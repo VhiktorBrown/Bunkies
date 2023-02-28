@@ -20,6 +20,7 @@
         <item name="chipBackgroundColor">@color/chip_background_color</item>
         <item name="android:textColor">@color/chip_text_color</item>
         <item name="fontFamily">@font/montserrat_semi_bold</item>
+        <item name="android:padding">@dimen/_10sdp</item>
         <item name="rippleColor">@android:color/transparent</item>
     </style>
 
