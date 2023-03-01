@@ -13,6 +13,12 @@ public class Inbox {
         this.lastMessage = lastMessage;
     }
 
+    public Inbox(String senderId, String message, String date) {
+        this.senderId = senderId;
+        this.message = message;
+        this.date = date;
+    }
+
     public String getSenderId() {
         return senderId;
     }

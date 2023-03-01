@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
+import com.squareup.picasso.Picasso
+import com.theelitedevelopers.bunkies.R
 import com.theelitedevelopers.bunkies.databinding.InboxInLayoutBinding
 import com.theelitedevelopers.bunkies.databinding.InboxOutLayoutBinding
 import com.theelitedevelopers.bunkies.modules.main.data.models.Inbox
@@ -47,6 +49,10 @@ class InboxAdapter(var context : Context, var messageList : ArrayList<Inbox>) : 
 
         }else {
             val viewHolder = holder as ReceivedViewHolder
+            Picasso.get()
+                .load(messageList[position].image)
+                .placeholder(R.drawable.bunkies_onboarding_1)
+                .into(holder.binding.inboxImage)
 
             //set the message
             holder.binding.inboxInMessage.text = messageList[position].message
@@ -57,7 +63,7 @@ class InboxAdapter(var context : Context, var messageList : ArrayList<Inbox>) : 
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if(FirebaseAuth.getInstance().uid.equals(messageList[position].senderId)){
+        return if("1" == messageList[position].senderId){
             SEND
         }else {
             RECEIVE
@@ -66,6 +72,11 @@ class InboxAdapter(var context : Context, var messageList : ArrayList<Inbox>) : 
 
     override fun getItemCount(): Int {
         return messageList.size
+    }
+
+    fun setList(messageList: ArrayList<Inbox>){
+        this.messageList = messageList;
+        notifyDataSetChanged()
     }
 
     class SentViewHolder(var binding : InboxOutLayoutBinding) : RecyclerView.ViewHolder(binding.root)
