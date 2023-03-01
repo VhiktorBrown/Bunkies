@@ -1,6 +1,7 @@
 package com.theelitedevelopers.bunkies.modules.main.home.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -11,6 +12,7 @@ import com.squareup.picasso.Picasso;
 import com.theelitedevelopers.bunkies.R;
 import com.theelitedevelopers.bunkies.databinding.AvailableRoommateLayoutBinding;
 import com.theelitedevelopers.bunkies.modules.main.data.models.Roommate;
+import com.theelitedevelopers.bunkies.modules.main.roommate.RoommateDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -45,6 +47,10 @@ public class AvailableRoommatesAdapter extends RecyclerView.Adapter<AvailableRoo
         holder.binding.roommateGenderWork.setText("Female|Student");
 
         holder.binding.budget.setText("$1,500/month");
+
+        holder.binding.getRoot().setOnClickListener(v -> {
+            v.getContext().startActivity(new Intent(v.getContext(), RoommateDetailsActivity.class));
+        });
     }
 
     @Override

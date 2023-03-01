@@ -27,4 +27,11 @@
     <string name="inbox">Inbox</string>
     <string name="profile">Profile</string>
     <string name="verified">Verified</string>
+    <string name="roommate_image">Roommate image</string>
+    <string name="budget">Budget</string>
+    <string name="rooms">Rooms</string>
+    <string name="bills">Bills</string>
+    <string name="bio">As much as I cringe writing bios about myself, this is necessary and I am left with no option than to write a bio about myself. I like reading and if you make the unfortunate choice to have me as your roommate, you\'ll spend your waking days alone because I\'ll be buried head deep in my world of books, except you want to join me, of course.</string>
+    <string name="send_message">Send Message</string>
+    <string name="send_a_message">Send a message</string>
 </resources>

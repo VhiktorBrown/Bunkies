@@ -2,6 +2,7 @@ package com.theelitedevelopers.bunkies.modules.main.inbox.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -12,6 +13,7 @@ import com.squareup.picasso.Picasso;
 import com.theelitedevelopers.bunkies.R;
 import com.theelitedevelopers.bunkies.databinding.InboxLayoutBinding;
 import com.theelitedevelopers.bunkies.modules.main.data.models.Inbox;
+import com.theelitedevelopers.bunkies.modules.main.inbox.InboxActivity;
 
 import java.util.ArrayList;
 
@@ -57,6 +59,11 @@ public class InboxListAdapter extends RecyclerView.Adapter<InboxListAdapter.Inbo
                     .load(inboxArrayList.get(position).getImage())
                     .placeholder(R.drawable.bunkies_onboarding_1)
                     .into(holder.binding.inboxImage);
+
+            holder.binding.getRoot().setOnClickListener(v -> {
+                Intent intent = new Intent(v.getContext(), InboxActivity.class);
+                v.getContext().startActivity(intent);
+            });
     }
 
     public void setList(ArrayList<Inbox> inboxArrayList){

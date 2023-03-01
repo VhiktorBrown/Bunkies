@@ -11,12 +11,16 @@
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/ic_password.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/ic_person.xml" value="0.20925925925925926" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/image_shadow.xml" value="0.17592592592592593" />
+        <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/inbox_out.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/message_in.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/primary_button.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/secondary_button.xml" value="0.20925925925925926" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/selected_textview_background.xml" value="0.20925925925925926" />
+        <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/send_message_layout.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/sign_up_with_google.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/textview_background.xml" value="0.20925925925925926" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/white_oval.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_inbox.xml" value="0.21" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_living_choices.xml" value="0.21" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_living_habits.xml" value="0.21" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_login.xml" value="0.22" />
@@ -27,17 +31,21 @@
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_personal_traits.xml" value="0.21" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_preferences.xml" value="0.21" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_register.xml" value="0.15081521739130435" />
+        <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_roommate_details.xml" value="0.21" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_setup_profile.xml" value="0.21" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_splashscreen.xml" value="0.12771739130434784" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/available_room_layout.xml" value="0.25" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/available_roommate_layout.xml" value="0.25" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/custom_chip_layout.xml" value="0.4476744186046512" />
+        <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/custom_static_chip_layout.xml" value="0.13949275362318841" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/explore_campus.xml" value="0.21" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/fragment_home.xml" value="0.21" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/fragment_home2.xml" value="0.10208333333333333" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/fragment_inbox.xml" value="0.22" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
+        <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/inbox_in_layout.xml" value="0.15" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/inbox_layout.xml" value="0.22" />
+        <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/inbox_out_layout.xml" value="0.1" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/slide_layout.xml" value="0.18" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/menu/menu_main.xml" value="0.21875" />
       </map>

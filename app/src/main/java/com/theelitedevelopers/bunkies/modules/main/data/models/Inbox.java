@@ -1,7 +1,8 @@
 package com.theelitedevelopers.bunkies.modules.main.data.models;
 
 public class Inbox {
-    String id;
+    String senderId;
+    String message;
     String image;
     String name;
     String date;
@@ -12,12 +13,20 @@ public class Inbox {
         this.lastMessage = lastMessage;
     }
 
-    public String getId() {
-        return id;
+    public String getSenderId() {
+        return senderId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setSenderId(String senderId) {
+        this.senderId = senderId;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getImage() {

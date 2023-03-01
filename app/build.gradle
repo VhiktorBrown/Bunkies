@@ -51,10 +51,20 @@ dependencies {
     //Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    //FIREBASE
+    implementation platform('com.google.firebase:firebase-bom:30.1.0')
+    // Declare the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-database'
+
     //Density Pixels for automatically assigning correct dimensions for UI components
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
 
+    //SeekBar Library
     implementation 'com.github.MohammedAlaaMorsi:RangeSeekBar:1.0.6'
 
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'

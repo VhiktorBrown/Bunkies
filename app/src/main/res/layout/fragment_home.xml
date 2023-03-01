@@ -90,7 +90,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="@dimen/_10sdp"
             android:orientation="horizontal"
-            android:scrollbars="horizontal"
+            android:scrollbars="none"
             android:layout_marginTop="@dimen/_10sdp"/>
 
         <View
@@ -125,7 +125,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="@dimen/_10sdp"
             android:orientation="horizontal"
-            android:scrollbars="horizontal"
+            android:scrollbars="none"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_10sdp"/>

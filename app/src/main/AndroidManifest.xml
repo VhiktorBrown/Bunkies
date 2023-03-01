@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bunkies">
         <activity
+            android:name=".modules.main.inbox.InboxActivity"
+            android:exported="true" />
+        <activity
             android:name=".modules.main.roommate.RoommateDetailsActivity"
             android:exported="true" />
         <activity

@@ -6,4 +6,349 @@
     android:layout_height="match_parent"
     tools:context=".modules.main.roommate.RoommateDetailsActivity">
 
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/main_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/go_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:contentDescription="@string/go_back"
+                app:tint="@color/textColor2" />
+
+            <ImageView
+                android:id="@+id/favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_favorite"
+                app:layout_constraintTop_toTopOf="@+id/go_back"
+                app:layout_constraintBottom_toBottomOf="@+id/go_back"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:tint="@color/textColor2" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/roommate_image_cardView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_150sdp"
+                app:cardBackgroundColor="@android:color/transparent"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                app:layout_constraintStart_toEndOf="@+id/go_back"
+                app:layout_constraintTop_toBottomOf="@+id/go_back"
+                app:layout_constraintEnd_toStartOf="@+id/favorite"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:backgroundTint="@android:color/transparent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bunkies_onboarding_1"
+                    android:contentDescription="@string/roommate_image"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/roommate_name_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Richard Brandson, 23"
+                android:fontFamily="@font/montserrat_semi_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="gravity"
+                android:gravity="center"
+                android:textColor="@color/textColor2"
+                app:layout_constraintTop_toBottomOf="@+id/roommate_image_cardView"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawableStart="@drawable/ic_verified"
+                android:drawablePadding="@dimen/_10sdp"
+                android:textSize="@dimen/_14ssp"/>
+
+            <TextView
+                android:id="@+id/desired_location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desired Location"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/roommate_name_age"
+                android:textColor="@color/textColor2"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginTop="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Awka, Nigeria"
+                app:layout_constraintStart_toStartOf="@+id/desired_location_text"
+                app:layout_constraintTop_toBottomOf="@+id/desired_location_text"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textColor2"
+                android:textSize="@dimen/_12ssp"
+                app:drawableStartCompat="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/desired_room_overview_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desired Room Overview"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/location"
+                android:textColor="@color/textColor2"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginTop="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/budget_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/budget"
+                app:layout_constraintStart_toStartOf="@+id/desired_room_overview_text"
+                app:layout_constraintTop_toBottomOf="@+id/desired_room_overview_text"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textGrey"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/budget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$1,500/month"
+                app:layout_constraintStart_toStartOf="@+id/desired_room_overview_text"
+                app:layout_constraintTop_toBottomOf="@+id/budget_text"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/textColor2"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/rooms_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rooms"
+                app:layout_constraintStart_toStartOf="@+id/rooms"
+                app:layout_constraintBottom_toTopOf="@+id/rooms"
+                app:layout_constraintTop_toBottomOf="@+id/desired_room_overview_text"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textGrey"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/rooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 shared room"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_30sdp"
+                app:layout_constraintTop_toBottomOf="@+id/rooms_text"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/textColor2"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/bills_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bills"
+                app:layout_constraintStart_toStartOf="@+id/desired_room_overview_text"
+                app:layout_constraintTop_toBottomOf="@+id/budget"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textGrey"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/bills"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Included"
+                app:layout_constraintStart_toStartOf="@+id/desired_room_overview_text"
+                app:layout_constraintTop_toBottomOf="@+id/bills_text"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/textColor2"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/availability_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Availability"
+                app:layout_constraintStart_toStartOf="@+id/availability"
+                app:layout_constraintBottom_toTopOf="@+id/availability"
+                app:layout_constraintTop_toBottomOf="@+id/budget"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textGrey"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/availability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Immediately"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_30sdp"
+                app:layout_constraintTop_toBottomOf="@+id/availability_text"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/textColor2"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/bio_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bio"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/bills"
+                android:textColor="@color/textColor2"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginTop="@dimen/_15sdp" />
+
+            <TextView
+                android:id="@+id/bio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/bio_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/bio_text"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/textColor"
+                android:text="@string/bio"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/about_me_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About me"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/bio"
+                android:textColor="@color/textColor2"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginTop="@dimen/_15sdp" />
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                app:layout_constraintStart_toStartOf="@+id/about_me_text"
+                app:layout_constraintTop_toBottomOf="@+id/about_me_text"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/textColor2"
+                android:textSize="@dimen/_14ssp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:drawableTint="@color/textColor2"
+                app:drawableStartCompat="@drawable/ic_person" />
+
+            <TextView
+                android:id="@+id/work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student"
+                app:layout_constraintStart_toEndOf="@+id/gender"
+                app:layout_constraintTop_toBottomOf="@+id/about_me_text"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/textColor2"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:drawablePadding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:drawableTint="@color/textColor2"
+                app:drawableStartCompat="@drawable/ic_work" />
+
+            <TextView
+                android:id="@+id/personality_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personality"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/gender"
+                android:textColor="@color/textColor2"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginTop="@dimen/_15sdp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/personality_chip_group"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/personality_text"
+                app:layout_constraintTop_toBottomOf="@+id/personality_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp" />
+
+            <TextView
+                android:id="@+id/interests_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Interests"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/personality_chip_group"
+                android:textColor="@color/textColor2"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginTop="@dimen/_15sdp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/interests_chip_group"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/interests_text"
+                app:layout_constraintTop_toBottomOf="@+id/interests_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/proceed_button"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintStart_toStartOf="@+id/go_back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/interests_chip_group"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:background="@drawable/primary_button"
+                android:text="@string/send_message"
+                android:textSize="@dimen/_14ssp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/secondary" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
