@@ -20,4 +20,4 @@ Living Habits Screen 2         |          Set Up Profile screen |               
 
 Home Screen 2         |          Inbox List screen |                Profile Screen
  :-------------------------:|:-------------------------:|:--------------------------:
-<img src="screenshots/home_screen_2.jpg" width = "430" height = "550"/>            |  <img src="screenshots/inbox_list_screen_screen.jpg" width = "430" height="550"/>  | <img src="screenshots/profile_screen.jpg" width = "430" height="550"/>
+<img src="screenshots/home_screen_2.jpg" width = "430" height = "550"/>            |  <img src="screenshots/inbox_list_screen.jpg" width = "430" height="550"/>  | <img src="screenshots/profile_screen.jpg" width = "430" height="550"/>
