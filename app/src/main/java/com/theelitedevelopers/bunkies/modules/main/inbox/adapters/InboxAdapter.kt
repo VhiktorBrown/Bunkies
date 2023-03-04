@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
 import com.theelitedevelopers.bunkies.R
+import com.theelitedevelopers.bunkies.core.utils.AppUtils
 import com.theelitedevelopers.bunkies.databinding.InboxInLayoutBinding
 import com.theelitedevelopers.bunkies.databinding.InboxOutLayoutBinding
 import com.theelitedevelopers.bunkies.modules.main.data.models.Inbox
@@ -45,7 +46,7 @@ class InboxAdapter(var context : Context, var messageList : ArrayList<Inbox>) : 
             //set the message
             holder.binding.inboxOutMessage.text = messageList[position].message
 
-            //holder.binding.inboxOutMessage.text = AppUtils.convertStringToDate(messageList[position].date!!)
+            holder.binding.inboxOutDate.text = messageList[position].date!!
 
         }else {
             val viewHolder = holder as ReceivedViewHolder
@@ -57,7 +58,7 @@ class InboxAdapter(var context : Context, var messageList : ArrayList<Inbox>) : 
             //set the message
             holder.binding.inboxInMessage.text = messageList[position].message
 
-            //holder.binding.inboxInDate.text = AppUtils.convertStringToDate(messageList[position].date!!)
+            holder.binding.inboxInDate.text = messageList[position].date!!
 
         }
     }

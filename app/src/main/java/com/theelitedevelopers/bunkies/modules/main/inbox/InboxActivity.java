@@ -35,6 +35,7 @@ public class InboxActivity extends AppCompatActivity {
             if(binding.sendAMessageEditText.getText().length() > 0){
                 populateDummyData(binding.sendAMessageEditText.getText().toString());
             }
+            binding.sendAMessageEditText.getText().clear();
         });
 
     }
