@@ -1,29 +1,61 @@
 package com.theelitedevelopers.bunkies.modules.main.data.models;
 
-import com.theelitedevelopers.bunkies.modules.account_setup.personal.models.Interest;
-import com.theelitedevelopers.bunkies.modules.account_setup.personal.models.Trait;
-
-import java.util.ArrayList;
+import com.google.gson.annotations.SerializedName;
 
 public class Roommate {
+    String email;
     String name;
+    String uid;
     String dateOfBirth;
+    @SerializedName("neighbourhood")
     String location;
+    String password;
     String bio;
     String image;
     String gender;
-    String budget;
-    String rooms;
-    String bills;
-    String availability;
-    String smoker;
-    String foodChoice;
-    String guests;
-    String pet;
-    String drinking;
     Boolean verified;
-    ArrayList<Trait> traits;
-    ArrayList<Interest> interests;
+//    ArrayList<Trait> traits;
+//    ArrayList<Interest> interests;
+    @SerializedName("preferences_done")
+    Boolean preferences_done;
+    @SerializedName("personal_traits_done")
+    Boolean personal_traits_done;
+    @SerializedName("personal_interests_done")
+    Boolean personal_interests_done;
+    @SerializedName("personal_habits_done")
+    Boolean personal_habits_done;
+    @SerializedName("living_habits_done")
+    Boolean living_habits_done;
+    @SerializedName("living_choices_done")
+    Boolean living_choices_done;
+    @SerializedName("setup_profile_done")
+    Boolean setup_profile_done;
+
+    public Roommate(){}
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public Roommate(String image) {
         this.image = image;
@@ -77,78 +109,6 @@ public class Roommate {
         this.gender = gender;
     }
 
-    public String getBudget() {
-        return budget;
-    }
-
-    public void setBudget(String budget) {
-        this.budget = budget;
-    }
-
-    public String getRooms() {
-        return rooms;
-    }
-
-    public void setRooms(String rooms) {
-        this.rooms = rooms;
-    }
-
-    public String getBills() {
-        return bills;
-    }
-
-    public void setBills(String bills) {
-        this.bills = bills;
-    }
-
-    public String getAvailability() {
-        return availability;
-    }
-
-    public void setAvailability(String availability) {
-        this.availability = availability;
-    }
-
-    public String getSmoker() {
-        return smoker;
-    }
-
-    public void setSmoker(String smoker) {
-        this.smoker = smoker;
-    }
-
-    public String getFoodChoice() {
-        return foodChoice;
-    }
-
-    public void setFoodChoice(String foodChoice) {
-        this.foodChoice = foodChoice;
-    }
-
-    public String getGuests() {
-        return guests;
-    }
-
-    public void setGuests(String guests) {
-        this.guests = guests;
-    }
-
-    public String getPet() {
-        return pet;
-    }
-
-    public void setPet(String pet) {
-        this.pet = pet;
-    }
-
-    public String getDrinking() {
-        return drinking;
-    }
-
-    public void setDrinking(String drinking) {
-        this.drinking = drinking;
-    }
-
     public Boolean getVerified() {
         return verified;
     }
@@ -157,19 +117,76 @@ public class Roommate {
         this.verified = verified;
     }
 
-    public ArrayList<Trait> getTraits() {
-        return traits;
+//    public ArrayList<Trait> getTraits() {
+//        return traits;
+//    }
+//
+//    public void setTraits(ArrayList<Trait> traits) {
+//        this.traits = traits;
+//    }
+//
+//    public ArrayList<Interest> getInterests() {
+//        return interests;
+//    }
+//
+//    public void setInterests(ArrayList<Interest> interests) {
+//        this.interests = interests;
+//    }
+
+
+    public Boolean getPreferences_done() {
+        return preferences_done;
     }
 
-    public void setTraits(ArrayList<Trait> traits) {
-        this.traits = traits;
+    public void setPreferences_done(Boolean preferences_done) {
+        this.preferences_done = preferences_done;
     }
 
-    public ArrayList<Interest> getInterests() {
-        return interests;
+    public Boolean getPersonal_traits_done() {
+        return personal_traits_done;
     }
 
-    public void setInterests(ArrayList<Interest> interests) {
-        this.interests = interests;
+    public void setPersonal_traits_done(Boolean personal_traits_done) {
+        this.personal_traits_done = personal_traits_done;
+    }
+
+    public Boolean getPersonal_interests_done() {
+        return personal_interests_done;
+    }
+
+    public void setPersonal_interests_done(Boolean personal_interests_done) {
+        this.personal_interests_done = personal_interests_done;
+    }
+
+    public Boolean getPersonal_habits_done() {
+        return personal_habits_done;
+    }
+
+    public void setPersonal_habits_done(Boolean personal_habits_done) {
+        this.personal_habits_done = personal_habits_done;
+    }
+
+    public Boolean getLiving_habits_done() {
+        return living_habits_done;
+    }
+
+    public void setLiving_habits_done(Boolean living_habits_done) {
+        this.living_habits_done = living_habits_done;
+    }
+
+    public Boolean getLiving_choices_done() {
+        return living_choices_done;
+    }
+
+    public void setLiving_choices_done(Boolean living_choices_done) {
+        this.living_choices_done = living_choices_done;
+    }
+
+    public Boolean getSetup_profile_done() {
+        return setup_profile_done;
+    }
+
+    public void setSetup_profile_done(Boolean setup_profile_done) {
+        this.setup_profile_done = setup_profile_done;
     }
 }

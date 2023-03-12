@@ -130,37 +130,17 @@
         android:textAllCaps="false"
         android:textSize="@dimen/_14ssp" />
 
-    <TextView
-        android:id="@+id/or"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="or"
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_5sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/log_in_button"
-        android:textSize="@dimen/_16ssp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:fontFamily="@font/montserrat_regular"
-        android:textColor="@color/textColor"/>
-
-<androidx.appcompat.widget.AppCompatButton
-    android:id="@+id/sign_in_with_google"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    app:layout_constraintStart_toStartOf="@+id/app_name"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/or"
-    android:layout_marginEnd="@dimen/_20sdp"
-    android:background="@drawable/sign_up_with_google"
-    android:layout_marginTop="@dimen/_10sdp"
-    android:textSize="@dimen/_14ssp"
-    android:drawableStart="@drawable/google_icon"
-    android:paddingEnd="@dimen/_20sdp"
-    android:paddingStart="@dimen/_50sdp"
-    android:text="Sign in with Google"
-    android:textAllCaps="false"
-    android:fontFamily="@font/montserrat_regular"
-    android:textColor="@color/textColor2"/>
+        android:indeterminateTint="@color/primary"
+        android:indeterminate="true" />
 
 <TextView
     android:id="@+id/dont_have_an_account"
@@ -169,7 +149,7 @@
     android:text="Dont have an account? Sign up"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/sign_in_with_google"
+    app:layout_constraintTop_toBottomOf="@+id/progress_bar"
     android:layout_marginTop="@dimen/_30sdp"
     android:fontFamily="@font/montserrat_regular"
     android:textColor="@color/textColor2"

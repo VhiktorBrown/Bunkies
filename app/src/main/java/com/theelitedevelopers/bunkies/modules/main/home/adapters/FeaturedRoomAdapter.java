@@ -1,6 +1,7 @@
 package com.theelitedevelopers.bunkies.modules.main.home.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -11,6 +12,7 @@ import com.squareup.picasso.Picasso;
 import com.theelitedevelopers.bunkies.R;
 import com.theelitedevelopers.bunkies.databinding.AvailableRoomLayoutBinding;
 import com.theelitedevelopers.bunkies.modules.main.data.models.RoomDetails;
+import com.theelitedevelopers.bunkies.modules.main.room.RoomDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -47,6 +49,11 @@ public class FeaturedRoomAdapter extends RecyclerView.Adapter<FeaturedRoomAdapte
         holder.binding.roomTime.setText("1 bedroom | immediately");
         holder.binding.budget.setText("$1,500/month");
         holder.binding.roomTypeCity.setText("1 bedroom, Awka");
+
+        holder.binding.getRoot().setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), RoomDetailsActivity.class);
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".modules.main.ad.room_ad.LocationRentAvailability">
+
+    <ImageView
+        android:id="@+id/go_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        app:tint="@color/textGrey"
+        android:contentDescription="@string/go_back"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location_rent_availability"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/go_back"
+        app:layout_constraintBottom_toBottomOf="@+id/go_back"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@color/textColor2"
+        android:fontFamily="@font/montserrat_semi_bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/go_back"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/city_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/city"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/city_text"
+                app:layout_constraintTop_toBottomOf="@+id/city_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:hint="Enter city"
+                android:textSize="@dimen/_12ssp"
+                android:textColorHint="@color/textGrey"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp" />
+
+            <TextView
+                android:id="@+id/street_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Street Address"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/city"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/street"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/street_text"
+                app:layout_constraintTop_toBottomOf="@+id/street_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:hint="Enter address"
+                android:textSize="@dimen/_12ssp"
+                android:textColorHint="@color/textGrey"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp" />
+
+            <TextView
+                android:id="@+id/bio_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add a Bio"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/street"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/bio"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                app:layout_constraintStart_toStartOf="@+id/bio_text"
+                app:layout_constraintTop_toBottomOf="@+id/bio_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:hint="This information will be visible to your potential roommates."
+                android:textAlignment="gravity"
+                android:gravity="start"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:textColorHint="@color/textGrey"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp" />
+
+            <TextView
+                android:id="@+id/rent_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rent per month"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/bio"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <SeekBar
+                android:id="@+id/rent_seek_bar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/rent_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp" />
+
+            <TextView
+                android:id="@+id/rent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20,000"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/rent_seek_bar"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/deposit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deposit"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/rent"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <SeekBar
+                android:id="@+id/deposit_seek_bar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/deposit_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp" />
+
+            <TextView
+                android:id="@+id/deposit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20,000"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/deposit_seek_bar"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <View
+                android:id="@+id/view_after_deposit"
+                android:layout_width="0dp"
+                android:layout_height="0.1dp"
+                app:layout_constraintStart_toStartOf="@+id/city"
+                app:layout_constraintEnd_toEndOf="@+id/city"
+                app:layout_constraintTop_toBottomOf="@+id/deposit"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/textColor" />
+
+            <TextView
+                android:id="@+id/availability_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Availability"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/view_after_deposit"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/availability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set a date"
+                android:padding="@dimen/_5sdp"
+                android:background="@drawable/availability_background"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/availability_text"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawableStart="@drawable/ic_date"
+                android:drawablePadding="@dimen/_5sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <CheckBox
+                android:id="@+id/available_immediately"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/availability"
+                android:text="Immediately"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/next_button"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_40sdp"
+                app:layout_constraintTop_toBottomOf="@+id/available_immediately"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:background="@drawable/primary_button"
+                android:text="Next"
+                android:textSize="@dimen/_14ssp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/secondary" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

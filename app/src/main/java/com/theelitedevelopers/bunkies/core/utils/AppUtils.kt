@@ -1,6 +1,12 @@
 package com.theelitedevelopers.bunkies.core.utils
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.view.View
+import com.google.android.material.snackbar.Snackbar
+import com.theelitedevelopers.bunkies.R
+import com.theelitedevelopers.bunkies.core.data.local.SharedPref
+import com.theelitedevelopers.bunkies.modules.main.data.models.Roommate
 import java.lang.Exception
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -15,6 +21,16 @@ class AppUtils {
         private const val HOUR_MILLIS = 60 * MINUTE_MILLIS
         private const val DAY_MILLIS = 24 * HOUR_MILLIS
         private const val WEEK_MILLIS = 7 * DAY_MILLIS
+
+        @SuppressLint("ResourceAsColor")
+        fun showSnackBar(view: View?, message: String?) {
+            if (view != null) {
+                val snackBar = Snackbar.make(view, message!!, Snackbar.LENGTH_LONG)
+                snackBar.view
+                    .setBackgroundColor(R.color.primary)
+                snackBar.show()
+            }
+        }
 
         fun convertDateFromOneFormatToAnother(
             sourceFormat: String?,
@@ -133,6 +149,18 @@ class AppUtils {
             // TODO: localize
             val diff = now - time
             return diff < 7 * AppUtils.DAY_MILLIS
+        }
+
+        @Throws(ParseException::class)
+        fun convertToDateFormat(formatType: String?, dateInString: String): Date? {
+            @SuppressLint("SimpleDateFormat") val format = SimpleDateFormat(formatType)
+            return format.parse(dateInString)
+        }
+
+        fun saveDataToSharedPref(context: Context, roommate: Roommate) {
+            SharedPref.getInstance(context).saveString(Constants.UID, roommate.uid)
+            SharedPref.getInstance(context).saveString(Constants.NAME, roommate.name)
+            SharedPref.getInstance(context).saveString(Constants.EMAIL, roommate.email)
         }
 
 

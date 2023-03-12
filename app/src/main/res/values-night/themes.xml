@@ -23,6 +23,22 @@
         <item name="rippleColor">@android:color/transparent</item>
     </style>
 
+    <style name="staticCustomChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        ...
+        <item name="materialThemeOverlay">@style/ThemeOverlay.MyApp.Chip.Choice</item>
+        <item name="chipBackgroundColor">@color/chip_static_background_color</item>
+        <item name="android:textColor">@color/chip_static_text_color</item>
+        <item name="fontFamily">@font/montserrat_semi_bold</item>
+        <item name="android:padding">@dimen/_10sdp</item>
+        <item name="rippleColor">@android:color/transparent</item>
+    </style>
+
+    <style name="BodyTextStyle" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/montserrat_semi_bold</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="TextStyle" parent="TextAppearance.AppCompat.Small">
         <item name="android:fontFamily">@font/montserrat_semi_bold</item>
         <item name="android:textSize">@dimen/_12ssp</item>

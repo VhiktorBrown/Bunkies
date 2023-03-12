@@ -1,16 +1,18 @@
 package com.theelitedevelopers.bunkies.modules.onboarding;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
-import androidx.viewpager.widget.ViewPager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.viewpager.widget.ViewPager;
+
 import com.theelitedevelopers.bunkies.R;
+import com.theelitedevelopers.bunkies.core.data.local.SharedPref;
+import com.theelitedevelopers.bunkies.core.utils.Constants;
 import com.theelitedevelopers.bunkies.databinding.ActivityOnboardingBinding;
 import com.theelitedevelopers.bunkies.modules.authentication.LoginActivity;
 import com.theelitedevelopers.bunkies.modules.onboarding.adapter.OnboardScreenPagerAdapter;
@@ -38,8 +40,7 @@ public class OnBoardingActivity extends AppCompatActivity {
             current = currentPage + 1;
             binding.boardingViewPager.setCurrentItem(current);
             if(current > 2) {
-                //SharedPref.getInstance(getApplicationContext()).saveBoolean(HAS_BEEN_LAUNCHED_BEFORE, true);
-
+                SharedPref.getInstance(getApplicationContext()).saveBoolean(Constants.HAS_BEEN_LAUNCHED, true);
                 startActivity(new Intent(OnBoardingActivity.this, LoginActivity.class));
                 finish();
             }

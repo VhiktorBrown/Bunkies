@@ -1,21 +1,33 @@
 package com.theelitedevelopers.bunkies.modules.account_setup.personal;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.chip.Chip;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 import com.theelitedevelopers.bunkies.R;
+import com.theelitedevelopers.bunkies.core.data.local.SharedPref;
+import com.theelitedevelopers.bunkies.core.utils.Constants;
 import com.theelitedevelopers.bunkies.databinding.ActivityPersonalTraitsBinding;
 import com.theelitedevelopers.bunkies.modules.account_setup.personal.models.Trait;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PersonalTraitsActivity extends AppCompatActivity {
     ActivityPersonalTraitsBinding binding;
     ArrayList<Trait> traits = new ArrayList<>();
     int count;
+    FirebaseFirestore database = FirebaseFirestore.getInstance();
+    FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +64,6 @@ public class PersonalTraitsActivity extends AppCompatActivity {
 
         binding.proceedButton.setOnClickListener(v -> {
             getSelectedChips();
-            startActivity(new Intent(this, PersonalInterestsActivity.class));
         });
     }
 
@@ -75,6 +86,46 @@ public class PersonalTraitsActivity extends AppCompatActivity {
                 }
                 trackCount++;
             }
+            binding.progressBar.setVisibility(View.VISIBLE);
+            saveTraitsToDB(traits);
+        }else {
+            Toast.makeText(PersonalTraitsActivity.this, "No trait was selected", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void saveTraitsToDB(ArrayList<Trait> traits){
+        Map<String, Object> traitsMap = new HashMap<>();
+        traitsMap.put("traits", traits);
+
+        database.collection("roommates").document(currentUser.getUid())
+                .set(traitsMap, SetOptions.merge())
+                .addOnSuccessListener(unused -> {
+                    //If everything went successfully, then we need
+                    //to tell Firebase that this user has finished the
+                    //Traits section
+                    markTraitsAsDone();
+
+                })
+                .addOnFailureListener(e -> {
+                    binding.progressBar.setVisibility(View.GONE);
+                });
+    }
+
+    private void markTraitsAsDone(){
+        Map<String, Object> traitsMap = new HashMap<>();
+        traitsMap.put(Constants.PERSONAL_TRAITS_DONE, true);
+
+        database.collection(Constants.ROOMMATES).document(currentUser.getUid())
+                .set(traitsMap, SetOptions.merge())
+                .addOnSuccessListener(unused -> {
+                    binding.progressBar.setVisibility(View.GONE);
+                    SharedPref.getInstance(getApplicationContext()).saveBoolean(Constants.PERSONAL_TRAITS_DONE, true);
+                    startActivity(new Intent(PersonalTraitsActivity.this, PersonalInterestsActivity.class));
+
+                })
+                .addOnFailureListener(e -> {
+                    binding.progressBar.setVisibility(View.GONE);
+                    Toast.makeText(PersonalTraitsActivity.this, "Something happened. Try again.", Toast.LENGTH_SHORT).show();
+                });
     }
 }

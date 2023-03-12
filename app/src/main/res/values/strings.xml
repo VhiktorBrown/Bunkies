@@ -34,4 +34,16 @@
     <string name="bio">As much as I cringe writing bios about myself, this is necessary and I am left with no option than to write a bio about myself. I like reading and if you make the unfortunate choice to have me as your roommate, you\'ll spend your waking days alone because I\'ll be buried head deep in my world of books, except you want to join me, of course.</string>
     <string name="send_message">Send Message</string>
     <string name="send_a_message">Send a message</string>
+    <string name="title_activity_post_roommate">PostRoommateActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="location_rent_availability"><![CDATA[Location, Rent & Availability]]></string>
+    <string name="room_overview_attributes"><![CDATA[Room overview & Attributes]]></string>
+    <string name="living_choices">Living Choices</string>
 </resources>

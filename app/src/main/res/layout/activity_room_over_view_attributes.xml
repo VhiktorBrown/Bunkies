@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".modules.main.ad.room_ad.RoomOverViewAttributesActivity">
+
+    <ImageView
+        android:id="@+id/go_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        app:tint="@color/textGrey"
+        android:contentDescription="@string/go_back"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/room_overview_attributes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/go_back"
+        app:layout_constraintBottom_toBottomOf="@+id/go_back"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@color/textColor2"
+        android:fontFamily="@font/montserrat_semi_bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/go_back"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/rent_type_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rent type"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/rent_type_chip_group"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                app:layout_constraintStart_toStartOf="@+id/rent_type_text"
+                app:layout_constraintTop_toBottomOf="@+id/rent_type_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp">
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <View
+                android:id="@+id/view_after_rent_type_chip_group"
+                android:layout_width="0dp"
+                android:layout_height="0.1dp"
+                app:layout_constraintStart_toStartOf="@+id/rent_type_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/rent_type_chip_group"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/textColor" />
+
+            <TextView
+                android:id="@+id/number_of_rooms_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number of rooms"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/view_after_rent_type_chip_group"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:id="@+id/remove_room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_remove"
+                app:layout_constraintEnd_toEndOf="@+id/view_after_rent_type_chip_group"
+                app:layout_constraintTop_toTopOf="@+id/number_of_rooms_text"
+                app:layout_constraintBottom_toBottomOf="@+id/number_of_rooms_text" />
+
+            <TextView
+                android:id="@+id/room_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/textColor2"
+                app:layout_constraintEnd_toStartOf="@+id/remove_room"
+                app:layout_constraintTop_toTopOf="@+id/remove_room"
+                app:layout_constraintBottom_toBottomOf="@+id/remove_room"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:id="@+id/add_room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:layout_constraintEnd_toStartOf="@+id/room_count"
+                app:layout_constraintTop_toTopOf="@+id/number_of_rooms_text"
+                app:layout_constraintBottom_toBottomOf="@+id/number_of_rooms_text" />
+
+            <View
+                android:id="@+id/view_after_number_of_rooms"
+                android:layout_width="0dp"
+                android:layout_height="0.1dp"
+                app:layout_constraintStart_toStartOf="@+id/number_of_rooms_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/number_of_rooms_text"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/textColor" />
+
+            <TextView
+                android:id="@+id/suitable_for_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The room is suitable for"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/view_after_number_of_rooms"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <CheckBox
+                android:id="@+id/student_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/suitable_for_text"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textColor" />
+
+            <CheckBox
+                android:id="@+id/vegan_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vegan"
+                app:layout_constraintTop_toTopOf="@+id/student_checkBox"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/suitable_for_text"
+                android:layout_marginStart="@dimen/_150sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textColor" />
+
+            <CheckBox
+                android:id="@+id/smoking_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Smoking"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/student_checkBox"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textColor" />
+
+            <CheckBox
+                android:id="@+id/pet_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pet's owner"
+                app:layout_constraintTop_toTopOf="@+id/smoking_checkBox"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_150sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textColor" />
+
+            <View
+                android:id="@+id/view_after_suitable_checkboxes"
+                android:layout_width="0dp"
+                android:layout_height="0.01dp"
+                android:background="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/smoking_checkBox" />
+
+            <TextView
+                android:id="@+id/room_attributes_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Room Atrributes"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/view_after_suitable_checkboxes"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
+            <CheckBox
+                android:id="@+id/ac_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AC"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/room_attributes_text"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textColor" />
+
+            <CheckBox
+                android:id="@+id/wifi_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wi-Fi"
+                app:layout_constraintTop_toTopOf="@+id/ac_checkBox"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/room_attributes_text"
+                android:layout_marginStart="@dimen/_150sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textColor" />
+
+            <CheckBox
+                android:id="@+id/balcony_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Balcony"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ac_checkBox"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textColor" />
+
+            <CheckBox
+                android:id="@+id/tv_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TV"
+                app:layout_constraintTop_toTopOf="@+id/balcony_checkBox"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_150sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textColor" />
+
+            <CheckBox
+                android:id="@+id/furniture_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Furniture"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_checkBox"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textColor" />
+
+            <CheckBox
+                android:id="@+id/renovated_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Renovated"
+                app:layout_constraintTop_toTopOf="@+id/furniture_checkBox"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_150sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textColor" />
+
+            <CheckBox
+                android:id="@+id/washing_machine_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Washing Machine"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/furniture_checkBox"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/post_button"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_40sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:background="@drawable/primary_button"
+                android:text="Post"
+                android:textSize="@dimen/_14ssp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:textColor="@color/secondary" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

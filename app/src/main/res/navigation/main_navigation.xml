@@ -12,9 +12,15 @@
         tools:layout="@layout/fragment_home"/>
 
     <fragment
+        android:id="@+id/postAnAdFragment"
+        android:name="com.theelitedevelopers.bunkies.modules.main.ad.fragments.PostAnAdFragment"
+        android:label="fragment_post_an_ad"
+        tools:layout="@layout/fragment_post_an_ad" />
+
+    <fragment
         android:id="@+id/inboxFragment"
         android:name="com.theelitedevelopers.bunkies.modules.main.inbox.fragments.InboxFragment"
-        android:label="fragment_scan"
+        android:label="fragment_inbox"
         tools:layout="@layout/fragment_inbox" />
 
     <fragment

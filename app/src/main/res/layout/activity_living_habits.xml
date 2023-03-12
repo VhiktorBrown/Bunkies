@@ -89,7 +89,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Frequently"
-                    android:checked="true"
                     android:fontFamily="@font/montserrat_regular"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/textColor2" />
@@ -139,7 +138,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Never"
-                    android:checked="true"
                     android:fontFamily="@font/montserrat_regular"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/textColor2" />
@@ -189,7 +187,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="A Few Hours"
-                    android:checked="true"
                     android:fontFamily="@font/montserrat_regular"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/textColor2" />
@@ -239,7 +236,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sometimes"
-                    android:checked="true"
                     android:fontFamily="@font/montserrat_regular"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/textColor2" />
@@ -282,7 +278,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non-Vegan"
-                    android:checked="true"
                     android:fontFamily="@font/montserrat_regular"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/textColor2" />
@@ -304,6 +299,18 @@
                 android:textAllCaps="false"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:textColor="@color/secondary" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/proceed_button"
+                android:indeterminateTint="@color/primary"
+                android:indeterminate="true" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

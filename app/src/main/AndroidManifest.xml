@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bunkies">
         <activity
+            android:name=".modules.main.room.RoomDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".modules.main.ad.room_ad.RoomOverViewAttributesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".modules.main.ad.room_ad.LocationRentAvailability"
+            android:exported="true" />
+        <activity
+            android:name=".modules.main.ad.roommate_ad.PostRoommateActivity"
+            android:exported="true" />
+        <activity
             android:name=".modules.main.inbox.InboxActivity"
             android:exported="true" />
         <activity

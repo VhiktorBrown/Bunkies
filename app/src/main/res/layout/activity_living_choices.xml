@@ -23,7 +23,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/living_habits"
+        android:text="@string/living_choices"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/go_back"
@@ -78,15 +78,15 @@
                 app:r2circleTextSize="@dimen/value_bar_circleTextSize"
                 app:r2fillColor="@color/primary"
                 app:r2maxValue="300000"
-                app:r2maxValueStep="1000"
+                app:r2maxValueStep="100"
                 app:r2minValue="10000"
-                app:r2minValueStep="1000" />
+                app:r2minValueStep="100" />
 
             <TextView
                 android:id="@+id/start_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="100,000"
+                android:text="20,000"
                 android:textColor="@color/textColor2"
                 app:layout_constraintStart_toStartOf="@+id/double_range_seekbar"
                 app:layout_constraintTop_toBottomOf="@+id/double_range_seekbar"
@@ -98,7 +98,7 @@
                 android:id="@+id/end_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="400,000"
+                android:text="500,000"
                 android:textColor="@color/textColor2"
                 android:layout_marginEnd="@dimen/_10sdp"
                 app:layout_constraintEnd_toEndOf="@+id/double_range_seekbar"
@@ -202,7 +202,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"
-                    android:checked="true"
                     android:fontFamily="@font/montserrat_regular"
                     android:textSize="@dimen/_10ssp"
                     android:textColor="@color/textColor2" />
@@ -274,6 +273,17 @@
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:textColor="@color/secondary" />
 
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/proceed_button"
+                android:indeterminateTint="@color/primary"
+                android:indeterminate="true" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
