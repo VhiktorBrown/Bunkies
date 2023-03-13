@@ -151,6 +151,84 @@ class AppUtils {
             return diff < 7 * AppUtils.DAY_MILLIS
         }
 
+        @SuppressLint("SimpleDateFormat")
+        fun fromTimeStampToString(timeStamp: Long): String {
+            var stamp = timeStamp;
+            stamp *= 1000L;
+            return try {
+                val sdf = SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss")
+                val netDate = Date(stamp)
+                sdf.format(netDate)
+            } catch (ex: Exception) {
+                "xx"
+            }
+        }
+
+        //This function is primarily for the buzz bubbles- to handle date Manipulation
+        fun getSingleInboxDate(date: String): String? {
+            var buzzDate: Date? = null
+            var finalDate: String? = null
+            try {
+                buzzDate = Objects.requireNonNull(
+                    getTimeFormat().parse(date)
+                )
+            } catch (e: ParseException) {
+                e.printStackTrace()
+            }
+            finalDate = when {
+                isTheSameDay(date) -> {
+                    getHourMinuteFormat().format(buzzDate!!)
+                }
+                withinAWeek(date) -> {
+                    getDayFormat()
+                        .format(buzzDate!!) + ", " + getHourMinuteFormat()
+                        .format(buzzDate)
+                }
+                isTheSameYear(date) -> {
+                    getDayMonthFormat()
+                        .format(buzzDate!!) + ", " + getHourMinuteFormat()
+                        .format(buzzDate)
+                }
+                else -> {
+                    getDayMonthYearFormat()
+                        .format(buzzDate!!) + ", " + getHourMinuteFormat()
+                        .format(buzzDate)
+                }
+            }
+            return finalDate
+        }
+
+        @Throws(ParseException::class)
+        fun convertToDateWithoutSeconds(dateInString: String): Date? {
+            val date = convertDateFromOneFormatToAnother(
+                "EEE, d MMM yyyy HH:mm:ss",
+                "EEE, d MMM yyyy HH:mm",
+                dateInString
+            )
+            return getTimeFormatWithoutSeconds()
+                .parse(date)
+        }
+
+        @SuppressLint("SimpleDateFormat")
+        fun convertDateToPresentableFormatWithOnlyDate(dateInString: String): String? {
+            val simpleDateFormat = SimpleDateFormat("dd MMM yyyy")
+            var date: Date? = null
+            var dateInPresentableFormat: String? = null
+            val format = SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss")
+            try {
+                date = format.parse(dateInString)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+            dateInPresentableFormat = if (date != null) {
+                simpleDateFormat.format(date)
+            } else {
+                ""
+            }
+            return dateInPresentableFormat
+        }
+
+
         @Throws(ParseException::class)
         fun convertToDateFormat(formatType: String?, dateInString: String): Date? {
             @SuppressLint("SimpleDateFormat") val format = SimpleDateFormat(formatType)
@@ -161,6 +239,12 @@ class AppUtils {
             SharedPref.getInstance(context).saveString(Constants.UID, roommate.uid)
             SharedPref.getInstance(context).saveString(Constants.NAME, roommate.name)
             SharedPref.getInstance(context).saveString(Constants.EMAIL, roommate.email)
+        }
+
+        fun removeDataToSharedPref(context : Context) {
+            SharedPref.getInstance(context).removeKeyValue(Constants.UID)
+            SharedPref.getInstance(context).removeKeyValue(Constants.NAME)
+            SharedPref.getInstance(context).removeKeyValue(Constants.EMAIL)
         }
 
 

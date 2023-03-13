@@ -25,6 +25,7 @@ import java.util.Map;
 public class PersonalTraitsActivity extends AppCompatActivity {
     ActivityPersonalTraitsBinding binding;
     ArrayList<Trait> traits = new ArrayList<>();
+    ArrayList<Trait> selectedTraits = new ArrayList<>();
     int count;
     FirebaseFirestore database = FirebaseFirestore.getInstance();
     FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -76,18 +77,19 @@ public class PersonalTraitsActivity extends AppCompatActivity {
     }
 
     private void getSelectedChips(){
+        selectedTraits.clear();
         count = binding.chipGroup.getChildCount();
         if(count > 0){
             int trackCount = 0;
             while(trackCount < count){
                 Chip chip = (Chip) binding.chipGroup.getChildAt(trackCount);
                 if(chip.isChecked()){
-                    traits.add(new Trait(chip.getText().toString()));
+                    selectedTraits.add(new Trait(chip.getText().toString()));
                 }
                 trackCount++;
             }
             binding.progressBar.setVisibility(View.VISIBLE);
-            saveTraitsToDB(traits);
+            saveTraitsToDB(selectedTraits);
         }else {
             Toast.makeText(PersonalTraitsActivity.this, "No trait was selected", Toast.LENGTH_SHORT).show();
         }

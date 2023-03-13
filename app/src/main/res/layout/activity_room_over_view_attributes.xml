@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/secondary"
     tools:context=".modules.main.ad.room_ad.RoomOverViewAttributesActivity">
 
     <ImageView
@@ -45,10 +46,10 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/rent_type_text"
+                android:id="@+id/room_type_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rent type"
+                android:text="Room type"
                 android:textColor="@color/textColor2"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="@dimen/_20sdp"
@@ -62,8 +63,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:singleSelection="true"
-                app:layout_constraintStart_toStartOf="@+id/rent_type_text"
-                app:layout_constraintTop_toBottomOf="@+id/rent_type_text"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/room_type_text"
+                app:layout_constraintTop_toBottomOf="@+id/room_type_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="@dimen/_20sdp">
 
@@ -73,7 +75,7 @@
                 android:id="@+id/view_after_rent_type_chip_group"
                 android:layout_width="0dp"
                 android:layout_height="0.1dp"
-                app:layout_constraintStart_toStartOf="@+id/rent_type_text"
+                app:layout_constraintStart_toStartOf="@+id/room_type_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="@dimen/_20sdp"
                 app:layout_constraintTop_toBottomOf="@+id/rent_type_chip_group"
@@ -313,6 +315,17 @@
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:textColor="@color/secondary" />
 
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/post_button"
+                android:indeterminateTint="@color/primary"
+                android:indeterminate="true" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

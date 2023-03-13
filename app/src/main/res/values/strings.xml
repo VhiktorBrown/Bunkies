@@ -46,4 +46,5 @@
     <string name="location_rent_availability"><![CDATA[Location, Rent & Availability]]></string>
     <string name="room_overview_attributes"><![CDATA[Room overview & Attributes]]></string>
     <string name="living_choices">Living Choices</string>
+    <string name="start_new_chat">Start new chat</string>
 </resources>

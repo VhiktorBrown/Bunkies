@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".modules.main.inbox.InboxActivity">
+    android:background="@color/secondary"
+    tools:context=".modules.main.inbox.ChatActivity">
 
     <ImageView
         android:id="@+id/go_back"
@@ -25,13 +26,15 @@
         app:layout_constraintStart_toEndOf="@id/go_back"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/_10sdp"
-        android:src="@drawable/bunkies_onboarding_1" />
+        android:src="@drawable/bunkies_onboarding_1"
+        android:tint="@color/primary"/>
 
     <TextView
         android:id="@+id/inbox_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Richard Brandson"
+        android:text="Chukwunomso Emmanuel"
+        android:textColor="@color/textColor2"
         app:layout_constraintStart_toEndOf="@+id/inbox_image"
         app:layout_constraintTop_toTopOf="@+id/inbox_image"
         app:layout_constraintBottom_toBottomOf="@+id/inbox_image"
@@ -45,7 +48,7 @@
         android:layout_height="0.1dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/textGrey"
+        android:background="@color/textColor2"
         app:layout_constraintTop_toBottomOf="@+id/inbox_image"
         android:layout_marginTop="@dimen/_10sdp" />
 
@@ -57,6 +60,45 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
         app:layout_constraintBottom_toTopOf="@+id/send_message_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/no_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintBottom_toTopOf="@+id/send_message_layout"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/no_data_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/bunkies_empty_data"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send your first message."
+            android:textColor="@color/textColor2"
+            android:fontFamily="@font/montserrat_semi_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/no_data_image"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textAlignment="gravity"
+            android:gravity="center" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/send_message_layout"
@@ -72,14 +114,18 @@
             android:id="@+id/send_a_message_edit_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/send_a_message"
+            android:hint="Send a message"
             android:background="@null"
+            app:layout_constraintEnd_toStartOf="@+id/send"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:padding="@dimen/_10sdp"
+            android:textSize="@dimen/_12ssp"
             android:layout_marginStart="@dimen/_10sdp"
             android:textColorHint="@color/textColor"
+            android:textColor="@color/primary"
             android:fontFamily="@font/montserrat_regular" />
 
         <ImageView
@@ -90,8 +136,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="@dimen/_20sdp" />
-
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:tint="@color/primary" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

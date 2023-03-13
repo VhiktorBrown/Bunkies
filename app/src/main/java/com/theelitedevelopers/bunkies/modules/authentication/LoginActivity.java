@@ -161,6 +161,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(this, PreferencesActivity.class));
         }
         finishAffinity();
+        binding.progressBar.setVisibility(View.GONE);
     }
 
     @Override

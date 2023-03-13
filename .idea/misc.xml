@@ -10,6 +10,7 @@
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/drop_down_item_bg.xml" value="0.19074074074074074" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/edit_text_background.xml" value="0.20925925925925926" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/ic_camera.xml" value="0.20925925925925926" />
+        <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/ic_email.xml" value="0.18518518518518517" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/ic_password.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/ic_person.xml" value="0.20925925925925926" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/image_shadow.xml" value="0.17592592592592593" />
@@ -23,6 +24,7 @@
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/sign_up_with_google.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/textview_background.xml" value="0.20925925925925926" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/drawable/white_oval.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_chat.xml" value="0.10638297872340426" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_inbox.xml" value="0.21" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_living_choices.xml" value="0.21" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_living_habits.xml" value="0.21" />
@@ -41,6 +43,7 @@
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_roommate_details.xml" value="0.21" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_setup_profile.xml" value="0.21" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_splashscreen.xml" value="0.12771739130434784" />
+        <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/activity_start_new_chat.xml" value="0.10638297872340426" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/available_room_layout.xml" value="0.25" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/available_roommate_layout.xml" value="0.25" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/custom_chip_layout.xml" value="0.4476744186046512" />
@@ -57,6 +60,7 @@
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/inbox_layout.xml" value="0.22" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/inbox_out_layout.xml" value="0.1" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/slide_layout.xml" value="0.18" />
+        <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/layout/start_new_chat_layout.xml" value="0.10638297872340426" />
         <entry key="..\:/Users/VICTOR/AndroidStudioProjects/Bunkies/app/src/main/res/menu/menu_main.xml" value="0.21875" />
       </map>
     </option>

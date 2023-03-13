@@ -1,13 +1,13 @@
-package com.theelitedevelopers.bunkies.modules.main.data.models;
+package com.theelitedevelopers.bunkies.modules.main.listing.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.annotation.NonNull;
-
 import com.google.firebase.Timestamp;
 
-public class RoomDetails implements Parcelable {
+import java.util.List;
+
+public class RoommateListing implements Parcelable {
     String city;
     String streetAddress;
     String bio;
@@ -20,17 +20,13 @@ public class RoomDetails implements Parcelable {
     String neighbourhood;
     Timestamp date;
     String numberOfRooms;
-    String[] suitableFor;
-    String[] roomAttributes;
+    List<String> suitableFor;
+    List<String> roomAttributes;
     String uid;
-    String image;
-    String roomType;
 
-    public RoomDetails(String image) {
-        this.image = image;
-    }
+    public RoommateListing(){}
 
-    protected RoomDetails(Parcel in) {
+    protected RoommateListing(Parcel in) {
         city = in.readString();
         streetAddress = in.readString();
         bio = in.readString();
@@ -43,22 +39,44 @@ public class RoomDetails implements Parcelable {
         neighbourhood = in.readString();
         date = in.readParcelable(Timestamp.class.getClassLoader());
         numberOfRooms = in.readString();
-        suitableFor = in.createStringArray();
-        roomAttributes = in.createStringArray();
+        suitableFor = in.createStringArrayList();
+        roomAttributes = in.createStringArrayList();
         uid = in.readString();
-        image = in.readString();
-        roomType = in.readString();
     }
 
-    public static final Creator<RoomDetails> CREATOR = new Creator<RoomDetails>() {
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(city);
+        dest.writeString(streetAddress);
+        dest.writeString(bio);
+        dest.writeString(adType);
+        dest.writeString(rentPerYear);
+        dest.writeString(deposit);
+        dest.writeByte((byte) (immediately ? 1 : 0));
+        dest.writeByte((byte) (billsIncluded ? 1 : 0));
+        dest.writeString(budget);
+        dest.writeString(neighbourhood);
+        dest.writeParcelable(date, flags);
+        dest.writeString(numberOfRooms);
+        dest.writeStringList(suitableFor);
+        dest.writeStringList(roomAttributes);
+        dest.writeString(uid);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<RoommateListing> CREATOR = new Creator<RoommateListing>() {
         @Override
-        public RoomDetails createFromParcel(Parcel in) {
-            return new RoomDetails(in);
+        public RoommateListing createFromParcel(Parcel in) {
+            return new RoommateListing(in);
         }
 
         @Override
-        public RoomDetails[] newArray(int size) {
-            return new RoomDetails[size];
+        public RoommateListing[] newArray(int size) {
+            return new RoommateListing[size];
         }
     };
 
@@ -158,19 +176,19 @@ public class RoomDetails implements Parcelable {
         this.numberOfRooms = numberOfRooms;
     }
 
-    public String[] getSuitableFor() {
+    public List<String> getSuitableFor() {
         return suitableFor;
     }
 
-    public void setSuitableFor(String[] suitableFor) {
+    public void setSuitableFor(List<String> suitableFor) {
         this.suitableFor = suitableFor;
     }
 
-    public String[] getRoomAttributes() {
+    public List<String> getRoomAttributes() {
         return roomAttributes;
     }
 
-    public void setRoomAttributes(String[] roomAttributes) {
+    public void setRoomAttributes(List<String> roomAttributes) {
         this.roomAttributes = roomAttributes;
     }
 
@@ -180,47 +198,5 @@ public class RoomDetails implements Parcelable {
 
     public void setUid(String uid) {
         this.uid = uid;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public String getRoomType() {
-        return roomType;
-    }
-
-    public void setRoomType(String roomType) {
-        this.roomType = roomType;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(@NonNull Parcel parcel, int i) {
-        parcel.writeString(city);
-        parcel.writeString(streetAddress);
-        parcel.writeString(bio);
-        parcel.writeString(adType);
-        parcel.writeString(rentPerYear);
-        parcel.writeString(deposit);
-        parcel.writeByte((byte) (immediately ? 1 : 0));
-        parcel.writeByte((byte) (billsIncluded ? 1 : 0));
-        parcel.writeString(budget);
-        parcel.writeString(neighbourhood);
-        parcel.writeParcelable(date, i);
-        parcel.writeString(numberOfRooms);
-        parcel.writeStringArray(suitableFor);
-        parcel.writeStringArray(roomAttributes);
-        parcel.writeString(uid);
-        parcel.writeString(image);
-        parcel.writeString(roomType);
     }
 }

@@ -59,8 +59,7 @@
             android:text="Married"
             android:fontFamily="@font/montserrat_regular"
             android:textColor="@color/black"
-            android:textSize="@dimen/_12ssp"
-            android:checked="true" />
+            android:textSize="@dimen/_12ssp" />
 
         <RadioButton
             android:id="@+id/un_married"
@@ -112,8 +111,7 @@
             android:text="Male"
             android:fontFamily="@font/montserrat_regular"
             android:textColor="@color/black"
-            android:textSize="@dimen/_12ssp"
-            android:checked="true" />
+            android:textSize="@dimen/_12ssp" />
 
         <RadioButton
             android:id="@+id/female"
@@ -165,8 +163,7 @@
             android:text="Professional"
             android:fontFamily="@font/montserrat_regular"
             android:textColor="@color/black"
-            android:textSize="@dimen/_12ssp"
-            android:checked="true" />
+            android:textSize="@dimen/_12ssp" />
 
         <RadioButton
             android:id="@+id/student"

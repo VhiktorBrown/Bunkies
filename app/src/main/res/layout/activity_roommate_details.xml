@@ -331,7 +331,7 @@
                 android:layout_marginEnd="@dimen/_20sdp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/proceed_button"
+                android:id="@+id/send_a_message_button"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_40sdp"
                 app:layout_constraintStart_toStartOf="@+id/go_back"

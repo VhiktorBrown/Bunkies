@@ -11,8 +11,7 @@
         android:layout_width="@dimen/_8sdp"
         android:layout_height="@dimen/_8sdp"
         android:layout_gravity="center_vertical"
-        android:background="@drawable/drop_down_item_bg"
-        />
+        android:background="@drawable/drop_down_item_bg" />
 
     <TextView
         android:id="@+id/textView"
@@ -20,6 +19,7 @@
         android:layout_height="wrap_content"
         style="@style/BodyTextStyle"
         android:textSize="@dimen/_14ssp"
-        android:layout_marginStart="@dimen/_10sdp"
-        />
+        android:textColor="@color/textColor2"
+        android:layout_marginStart="@dimen/_10sdp" />
+
 </LinearLayout>

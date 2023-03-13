@@ -86,7 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
                         Log.d(TAG, "createUserWithEmail:success");
                         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-                        Toast.makeText(RegisterActivity.this, "Account create successfully.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Account created successfully.", Toast.LENGTH_SHORT).show();
                         saveRoommateDetailsToDB(roommate, user);
                     } else {
                         binding.progressBar.setVisibility(View.GONE);

@@ -10,11 +10,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 import com.theelitedevelopers.bunkies.R;
+import com.theelitedevelopers.bunkies.core.utils.Constants;
 import com.theelitedevelopers.bunkies.databinding.AvailableRoomLayoutBinding;
 import com.theelitedevelopers.bunkies.modules.main.data.models.RoomDetails;
 import com.theelitedevelopers.bunkies.modules.main.room.RoomDetailsActivity;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class FeaturedRoomAdapter extends RecyclerView.Adapter<FeaturedRoomAdapter.FeaturedRoomViewHolder> {
     ArrayList<RoomDetails> rooms;
@@ -50,8 +53,17 @@ public class FeaturedRoomAdapter extends RecyclerView.Adapter<FeaturedRoomAdapte
         holder.binding.budget.setText("$1,500/month");
         holder.binding.roomTypeCity.setText("1 bedroom, Awka");
 
+        holder.binding.roomTypeCity.setText(rooms.get(position).getNumberOfRooms()+
+                " "+rooms.get(position).getRoomType()+", "+rooms.get(position).getCity());
+        holder.binding.roomTime.setText(rooms.get(position).getNumberOfRooms()+
+                " "+rooms.get(position).getRoomType()+" | "+rooms.get(position).getCity());
+
+        holder.binding.budget.setText("NGN "+ NumberFormat.getNumberInstance(Locale.US).format(
+                rooms.get(position).getRentPerYear())+"/year");
+
         holder.binding.getRoot().setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), RoomDetailsActivity.class);
+            intent.putExtra(Constants.ROOM_DETAILS, rooms.get(position));
             v.getContext().startActivity(intent);
         });
     }
@@ -59,6 +71,10 @@ public class FeaturedRoomAdapter extends RecyclerView.Adapter<FeaturedRoomAdapte
     @Override
     public int getItemCount() {
         return rooms.size();
+    }
+
+    public void setList(ArrayList<RoomDetails> rooms){
+        this.rooms = rooms;
     }
 
     public static class FeaturedRoomViewHolder extends RecyclerView.ViewHolder {

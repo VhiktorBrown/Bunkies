@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/secondary"
     tools:context=".modules.main.ad.roommate_ad.PostRoommateActivity">
 
     <ImageView
@@ -65,7 +66,7 @@
                 android:id="@+id/neighbourhood_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Where are you looking to move to"
+                android:text="Where are you looking to move to?"
                 android:textColor="@color/textColor2"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="@dimen/_20sdp"
@@ -84,6 +85,7 @@
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:hint="Enter Neighbourhood street or city"
                 android:textSize="@dimen/_12ssp"
+                android:textColor="@color/textColor2"
                 android:textColorHint="@color/textGrey"
                 android:fontFamily="@font/montserrat_regular"
                 android:background="@drawable/edit_text_background"
@@ -124,13 +126,26 @@
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp" />
 
+            <TextView
+                android:id="@+id/budget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20,000"
+                android:textColor="@color/textColor2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/budget_seek_bar"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp" />
+
             <CheckBox
                 android:id="@+id/bills_included"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/budget_seek_bar"
+                app:layout_constraintTop_toBottomOf="@+id/budget"
                 android:text="Bills included"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:textColor="@color/textColor" />
@@ -267,6 +282,18 @@
                 android:textAllCaps="false"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:textColor="@color/secondary" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/post_button"
+                android:indeterminateTint="@color/primary"
+                android:indeterminate="true" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

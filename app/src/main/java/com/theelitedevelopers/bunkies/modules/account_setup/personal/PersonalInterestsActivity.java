@@ -24,6 +24,7 @@ import java.util.Map;
 public class PersonalInterestsActivity extends AppCompatActivity {
     ActivityPersonalInterestsBinding binding;
     ArrayList<Interest> interests = new ArrayList<>();
+    ArrayList<Interest> selectedInterests = new ArrayList<>();
     int count;
     FirebaseFirestore database = FirebaseFirestore.getInstance();
     FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -73,18 +74,19 @@ public class PersonalInterestsActivity extends AppCompatActivity {
     }
 
     private void getSelectedChips(){
+        selectedInterests.clear();
         count = binding.chipGroup.getChildCount();
         if(count > 0){
             int trackCount = 0;
             while(trackCount < count){
                 Chip chip = (Chip) binding.chipGroup.getChildAt(trackCount);
                 if(chip.isChecked()){
-                    interests.add(new Interest(chip.getText().toString()));
+                    selectedInterests.add(new Interest(chip.getText().toString()));
                 }
                 trackCount++;
             }
             binding.progressBar.setVisibility(View.VISIBLE);
-            saveInterestsToDB(interests);
+            saveInterestsToDB(selectedInterests);
         }else {
             Toast.makeText(PersonalInterestsActivity.this, "No interest was selected.", Toast.LENGTH_SHORT).show();
         }
