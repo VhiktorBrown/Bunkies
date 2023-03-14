@@ -58,7 +58,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/bunkies_onboarding_1"
+                    android:src="@drawable/bunkies_profile"
                     android:contentDescription="@string/roommate_image"
                     android:scaleType="centerCrop" />
 
@@ -91,7 +91,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/roommate_name_age"
                 android:textColor="@color/textColor2"
                 android:fontFamily="@font/montserrat_semi_bold"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_12ssp"
                 android:layout_marginTop="@dimen/_10sdp" />
 
             <TextView
@@ -104,7 +104,7 @@
                 android:drawablePadding="@dimen/_5sdp"
                 android:fontFamily="@font/montserrat_regular"
                 android:textColor="@color/textColor2"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_10ssp"
                 app:drawableStartCompat="@drawable/ic_location" />
 
             <TextView
@@ -117,7 +117,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/location"
                 android:textColor="@color/textColor2"
                 android:fontFamily="@font/montserrat_semi_bold"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_12ssp"
                 android:layout_marginTop="@dimen/_10sdp" />
 
             <TextView
@@ -141,15 +141,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/budget_text"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:textColor="@color/textColor2"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_10ssp" />
 
             <TextView
                 android:id="@+id/rooms_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rooms"
-                app:layout_constraintStart_toStartOf="@+id/rooms"
+                app:layout_constraintStart_toStartOf="@+id/budget_text"
                 app:layout_constraintBottom_toTopOf="@+id/rooms"
+                android:layout_marginStart="@dimen/_150sdp"
                 app:layout_constraintTop_toBottomOf="@+id/desired_room_overview_text"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:fontFamily="@font/montserrat_regular"
@@ -161,12 +162,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1 shared room"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/rooms_text"
                 android:layout_marginEnd="@dimen/_30sdp"
                 app:layout_constraintTop_toBottomOf="@+id/rooms_text"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:textColor="@color/textColor2"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_10ssp" />
 
             <TextView
                 android:id="@+id/bills_text"
@@ -189,14 +190,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/bills_text"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:textColor="@color/textColor2"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_10ssp" />
 
             <TextView
                 android:id="@+id/availability_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Availability"
-                app:layout_constraintStart_toStartOf="@+id/availability"
+                app:layout_constraintStart_toStartOf="@+id/rooms_text"
                 app:layout_constraintBottom_toTopOf="@+id/availability"
                 app:layout_constraintTop_toBottomOf="@+id/budget"
                 android:layout_marginTop="@dimen/_10sdp"
@@ -209,12 +210,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Immediately"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/availability_text"
                 android:layout_marginEnd="@dimen/_30sdp"
                 app:layout_constraintTop_toBottomOf="@+id/availability_text"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:textColor="@color/textColor2"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_10ssp" />
 
             <TextView
                 android:id="@+id/bio_text"
@@ -226,7 +227,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/bills"
                 android:textColor="@color/textColor2"
                 android:fontFamily="@font/montserrat_semi_bold"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_12ssp"
                 android:layout_marginTop="@dimen/_15sdp" />
 
             <TextView
@@ -252,7 +253,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/bio"
                 android:textColor="@color/textColor2"
                 android:fontFamily="@font/montserrat_semi_bold"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_12ssp"
                 android:layout_marginTop="@dimen/_15sdp" />
 
             <TextView
@@ -264,7 +265,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/about_me_text"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:textColor="@color/textColor2"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_12ssp"
                 android:drawablePadding="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 app:drawableTint="@color/textColor2"
@@ -279,7 +280,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/about_me_text"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:textColor="@color/textColor2"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_12ssp"
                 android:layout_marginStart="@dimen/_40sdp"
                 android:drawablePadding="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
@@ -296,7 +297,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/gender"
                 android:textColor="@color/textColor2"
                 android:fontFamily="@font/montserrat_semi_bold"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_12ssp"
                 android:layout_marginTop="@dimen/_15sdp" />
 
             <com.google.android.material.chip.ChipGroup
@@ -318,7 +319,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/personality_chip_group"
                 android:textColor="@color/textColor2"
                 android:fontFamily="@font/montserrat_semi_bold"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_12ssp"
                 android:layout_marginTop="@dimen/_15sdp" />
 
             <com.google.android.material.chip.ChipGroup

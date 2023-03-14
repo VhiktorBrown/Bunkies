@@ -1,4 +1,5 @@
 package com.theelitedevelopers.bunkies.modules.main.home.fragments;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.theelitedevelopers.bunkies.core.data.local.SharedPref;
 import com.theelitedevelopers.bunkies.core.utils.Constants;
 import com.theelitedevelopers.bunkies.databinding.FragmentHomeBinding;
 import com.theelitedevelopers.bunkies.modules.main.data.models.RoomDetails;
@@ -19,6 +21,7 @@ import com.theelitedevelopers.bunkies.modules.main.home.adapters.CampusAdapter;
 import com.theelitedevelopers.bunkies.modules.main.home.adapters.FeaturedRoomAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
     FragmentHomeBinding binding;
@@ -28,12 +31,24 @@ public class HomeFragment extends Fragment {
     ArrayList<RoomDetails> rooms = new ArrayList<>();
     ArrayList<Roommate> roommates = new ArrayList<>();
     FirebaseFirestore database = FirebaseFirestore.getInstance();
+    List<String> cities = new ArrayList<>();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false);
+
+        binding.homeMessage.setText("Hi "+ SharedPref.getInstance(requireActivity()).getString(Constants.NAME)
+        +"! Let's help you find your roommate.");
+
+        cities.add("Awka");
+        cities.add("Enugu");
+        cities.add("Owerri");
+        cities.add("Port");
+        cities.add("Lagos");
+        cities.add("Abuja");
+
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
         LinearLayoutManager layoutManager1 = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
@@ -47,9 +62,11 @@ public class HomeFragment extends Fragment {
         binding.roomsRecyclerView.setHasFixedSize(true);
         binding.availableRoommatesRecyclerView.setHasFixedSize(true);
 
-        setUpDummyLists();
+        //setUpDummyLists();
 
-        campusAdapter = new CampusAdapter(requireContext(), rooms);
+        fetchData();
+
+        campusAdapter = new CampusAdapter(requireContext(), cities);
         featuredRoomAdapter = new FeaturedRoomAdapter(requireContext(), rooms);
         availableRoommatesAdapter = new AvailableRoommatesAdapter(requireContext(), roommates);
 
@@ -57,6 +74,10 @@ public class HomeFragment extends Fragment {
         binding.roomsRecyclerView.setAdapter(featuredRoomAdapter);
         binding.availableRoommatesRecyclerView.setAdapter(availableRoommatesAdapter);
 
+        return binding.getRoot();
+    }
+
+    private void fetchData(){
         database.collection(Constants.LISTINGS)
                 .whereEqualTo("adType", "room")
                 .addSnapshotListener((value, error) -> {
@@ -84,9 +105,8 @@ public class HomeFragment extends Fragment {
                         availableRoommatesAdapter.setList(roommates);
                     }
                 });
-
-        return binding.getRoot();
     }
+
 
     private void setUpDummyLists(){
         rooms.add(new RoomDetails(null));
@@ -106,5 +126,17 @@ public class HomeFragment extends Fragment {
         roommates.add(new Roommate(null));
         roommates.add(new Roommate(null));
         roommates.add(new Roommate(null));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        fetchData();
+    }
+
+    @Override
+    public void onStart() {
+        fetchData();
+        super.onStart();
     }
 }

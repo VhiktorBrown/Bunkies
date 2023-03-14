@@ -40,10 +40,12 @@ public class RoomOverViewAttributesActivity extends AppCompatActivity {
         binding = ActivityRoomOverViewAttributesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         roommateListing = getIntent().getParcelableExtra(Constants.ROOM_LISTING);
-        roomType.add("Shared bedroom");
-        roomType.add("1 bedroom");
+        roomType.add("Shared room");
+        roomType.add("Private room");
 
         addChips();
+
+        binding.goBack.setOnClickListener(v -> onBackPressed());
 
         binding.postButton.setOnClickListener(v -> {
             if(getSelectedChips()){
@@ -236,7 +238,7 @@ public class RoomOverViewAttributesActivity extends AppCompatActivity {
         roomMap.put("streetAddress", roommateListing.getStreetAddress());
         if(roommateListing.isImmediately()){
             roomMap.put("immediately", true);
-            roomMap.put("date", "");
+            roomMap.put("date", null);
         }else {
             roomMap.put("immediately", false);
             roomMap.put("date", roommateListing.getDate());

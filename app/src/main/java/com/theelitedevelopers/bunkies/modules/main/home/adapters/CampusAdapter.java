@@ -7,20 +7,17 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
-import com.theelitedevelopers.bunkies.R;
 import com.theelitedevelopers.bunkies.databinding.ExploreCampusBinding;
-import com.theelitedevelopers.bunkies.modules.main.data.models.RoomDetails;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class CampusAdapter extends RecyclerView.Adapter<CampusAdapter.CampusViewHolder> {
-    ArrayList<RoomDetails> rooms;
+    List<String> cities;
     Context context;
 
-    public CampusAdapter(Context context, ArrayList<RoomDetails> rooms){
+    public CampusAdapter(Context context, List<String> cities){
         this.context = context;
-        this.rooms = rooms;
+        this.cities = cities;
     }
 
     @NonNull
@@ -35,15 +32,12 @@ public class CampusAdapter extends RecyclerView.Adapter<CampusAdapter.CampusView
 
     @Override
     public void onBindViewHolder(@NonNull CampusViewHolder holder, int position) {
-        Picasso.get()
-                .load(rooms.get(position).getImage())
-                .placeholder(R.drawable.bunkies_onboarding_1)
-                .into(holder.binding.roomImageView);
+        holder.binding.nameOfCampus.setText(cities.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return rooms.size();
+        return cities.size();
     }
 
     public static class CampusViewHolder extends RecyclerView.ViewHolder {

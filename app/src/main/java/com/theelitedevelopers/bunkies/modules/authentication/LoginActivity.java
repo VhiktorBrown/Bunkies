@@ -23,6 +23,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.theelitedevelopers.bunkies.core.data.local.SharedPref;
+import com.theelitedevelopers.bunkies.core.utils.AppUtils;
 import com.theelitedevelopers.bunkies.core.utils.Constants;
 import com.theelitedevelopers.bunkies.databinding.ActivityLoginBinding;
 import com.theelitedevelopers.bunkies.modules.account_setup.living_choices_habits.LivingChoicesActivity;
@@ -120,7 +122,8 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         roommate = task.getResult().toObject(Roommate.class);
                         if(roommate != null){
-                            Toast.makeText(LoginActivity.this, "Fetched Roommate successfully.", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(LoginActivity.this, "Fetched Roommate successfully.", Toast.LENGTH_SHORT).show();
+                            AppUtils.Companion.saveDataToSharedPref(LoginActivity.this, roommate);
                             checkRegistrationStatus(roommate);
                         }
                     } else {
@@ -130,7 +133,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void checkRegistrationStatus(Roommate roommate) {
-        Toast.makeText(LoginActivity.this, String.valueOf(roommate.getPreferences_done()), Toast.LENGTH_SHORT).show();
         if (roommate.getPreferences_done() != null && roommate.getPreferences_done()) {
             if(roommate.getPersonal_traits_done() != null && roommate.getPersonal_traits_done()){
                 if(roommate.getPersonal_interests_done() != null && roommate.getPersonal_interests_done()){
@@ -167,8 +169,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if(currentUser != null){
-            getRoommateDetails(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        if(!SharedPref.getInstance(getApplicationContext()).getString(Constants.UID).equals("")){
+            if(currentUser != null){
+                getRoommateDetails(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            }
         }
     }
 }

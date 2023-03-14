@@ -37,6 +37,8 @@ public class LocationRentAvailability extends AppCompatActivity {
         binding = ActivityLocationRentAvailabilityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.goBack.setOnClickListener(v -> onBackPressed());
+
         binding.nextButton.setOnClickListener(v -> {
             if(validateUserInput()){
                 RoommateListing roommateListing = new RoommateListing();

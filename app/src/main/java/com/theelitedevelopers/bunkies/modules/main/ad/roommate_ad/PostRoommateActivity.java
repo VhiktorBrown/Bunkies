@@ -1,5 +1,6 @@
 package com.theelitedevelopers.bunkies.modules.main.ad.roommate_ad;
 import static com.theelitedevelopers.bunkies.core.utils.Constants.CITY;
+import static com.theelitedevelopers.bunkies.core.utils.Constants.NAME;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -51,15 +52,9 @@ public class PostRoommateActivity extends AppCompatActivity {
         binding = ActivityPostRoommateBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        database.collection(Constants.ROOMMATES)
-                .whereEqualTo("uid", SharedPref.getInstance(getApplicationContext()).getString(Constants.UID))
-                .addSnapshotListener((value, error) -> {
-                    assert value != null;
-                    if(!value.getDocuments().isEmpty()) {
-                        roommate = value.getDocuments().get(0).toObject(Roommate.class);
-                    }
-                });
+        binding.goBack.setOnClickListener(v -> onBackPressed());
 
+        fetchRoommate();
 
         binding.addRoom.setOnClickListener(v -> {
             roomCount+=1;
@@ -121,6 +116,17 @@ public class PostRoommateActivity extends AppCompatActivity {
         });
     }
 
+    private void fetchRoommate(){
+        database.collection(Constants.ROOMMATES)
+                .whereEqualTo("uid", SharedPref.getInstance(getApplicationContext()).getString(Constants.UID))
+                .addSnapshotListener((value, error) -> {
+                    assert value != null;
+                    if(!value.getDocuments().isEmpty()) {
+                        roommate = value.getDocuments().get(0).toObject(Roommate.class);
+                    }
+                });
+    }
+
     private boolean validateUserInput() {
         city = binding.neighbourhood.getText().toString();
         if (city.isEmpty()) {
@@ -164,19 +170,20 @@ public class PostRoommateActivity extends AppCompatActivity {
 
     private void saveRoommateToListing(){
         Map<String, Object> roommateMap = new HashMap<>();
+        roommateMap.put(NAME, SharedPref.getInstance(getApplicationContext()).getString(NAME));
         roommateMap.put(CITY, city);
-        roommateMap.put(Constants.DATE_OF_BIRTH, roommate.getDateOfBirth());
+        roommateMap.put(Constants.DATE_OF_BIRTH, roommate.getDate_of_birth());
         roommateMap.put(Constants.GENDER, roommate.getGender());
         roommateMap.put(Constants.OCCUPATION, roommate.getOccupation());
         if(availableImmediately){
             roommateMap.put("immediately", true);
-            roommateMap.put("date", "");
+            roommateMap.put("date", null);
         }else {
             roommateMap.put("immediately", false);
             roommateMap.put("date", dateAvailable);
         }
         roommateMap.put("adType", "roommate");
-        roommateMap.put("budget", budget);
+        roommateMap.put("budget", String.valueOf(budget));
         roommateMap.put("numberOfRooms", String.valueOf(roomCount));
         roommateMap.put("billsIncluded", billsIncluded);
         roommateMap.put(Constants.UID, currentUser.getUid());
@@ -185,9 +192,9 @@ public class PostRoommateActivity extends AppCompatActivity {
                 .add(roommateMap)
                 .addOnSuccessListener(unused -> {
                     binding.progressBar.setVisibility(View.GONE);
-                    displayToast("Roommate ad added successfully. Go to My Listing in Profile to see your ads");
+                    displayToast("Roommate ad added successfully.");
                     startActivity(new Intent(PostRoommateActivity.this, MainActivity.class));
-                    finishAffinity();
+                    finish();
                 })
                 .addOnFailureListener(e -> {
                     binding.progressBar.setVisibility(View.GONE);

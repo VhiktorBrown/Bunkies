@@ -2,12 +2,14 @@ package com.theelitedevelopers.bunkies.modules.main.roommate;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.chip.Chip;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.theelitedevelopers.bunkies.R;
+import com.theelitedevelopers.bunkies.core.data.local.SharedPref;
 import com.theelitedevelopers.bunkies.core.utils.AppUtils;
 import com.theelitedevelopers.bunkies.core.utils.Constants;
 import com.theelitedevelopers.bunkies.databinding.ActivityRoommateDetailsBinding;
@@ -33,6 +35,15 @@ public class RoommateDetailsActivity extends AppCompatActivity {
         binding = ActivityRoommateDetailsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         adRoommate = getIntent().getParcelableExtra(Constants.ROOMMATE_DETAILS);
+
+        binding.goBack.setOnClickListener(v -> onBackPressed());
+
+        //If I'm the owner of the Ad, remove 'Send Message' button
+        if(SharedPref.getInstance(getApplicationContext()).getString(Constants.UID).equals(adRoommate.getUid())){
+            binding.sendAMessageButton.setVisibility(View.GONE);
+        }else {
+            binding.sendAMessageButton.setVisibility(View.VISIBLE);
+        }
 
         database.collection(Constants.ROOMMATES)
                 .whereEqualTo("uid", adRoommate.getUid())
@@ -87,7 +98,7 @@ public class RoommateDetailsActivity extends AppCompatActivity {
 
     private void setRoommateDetails(Roommate roommate){
         binding.location.setText(adRoommate.getCity());
-        binding.budget.setText("NGN"+ NumberFormat.getNumberInstance(Locale.US).format(adRoommate.getBudget())+"/per year");
+        binding.budget.setText("NGN"+ NumberFormat.getNumberInstance(Locale.US).format(Integer.parseInt(adRoommate.getBudget()))+"/year");
         binding.rooms.setText(adRoommate.getNumberOfRooms()+" shared room");
         if(adRoommate.isBillsIncluded()){
             binding.bills.setText("Included");

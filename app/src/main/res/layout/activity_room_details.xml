@@ -60,7 +60,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/bunkies_onboarding_1"
+                        android:src="@drawable/room"
                         android:contentDescription="@string/roommate_image"
                         android:scaleType="centerCrop" />
 
@@ -114,7 +114,7 @@
                 android:id="@+id/roommate_image"
                 android:layout_width="@dimen/_45sdp"
                 android:layout_height="@dimen/_45sdp"
-                android:src="@drawable/bunkies_onboarding_1"
+                android:src="@drawable/bunkies_profile"
                 app:layout_constraintStart_toStartOf="@+id/description_text"
                 app:layout_constraintTop_toBottomOf="@+id/description_text"
                 android:layout_marginTop="@dimen/_10sdp" />

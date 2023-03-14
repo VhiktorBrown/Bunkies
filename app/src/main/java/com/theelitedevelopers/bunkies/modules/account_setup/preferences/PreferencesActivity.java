@@ -39,6 +39,8 @@ public class PreferencesActivity extends AppCompatActivity {
         binding.doubleRangeSeekbar.setCurrentMinValue(15);
         binding.doubleRangeSeekbar.setCurrentMinValue(45);
 
+        binding.goBack.setOnClickListener(v -> onBackPressed());
+
         binding.doubleRangeSeekbar.setOnRangeSeekBarViewChangeListener(new OnDoubleValueSeekBarChangeListener() {
             @Override
             public void onValueChanged(@Nullable DoubleValueSeekBarView doubleValueSeekBarView, int i, int i1, boolean b) {

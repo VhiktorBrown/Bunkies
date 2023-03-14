@@ -43,7 +43,7 @@ public class AvailableRoommatesAdapter extends RecyclerView.Adapter<AvailableRoo
     public void onBindViewHolder(@NonNull AvailableRoommateViewHolder holder, int position) {
         Picasso.get()
                 .load(availableRoommates.get(position).getImage())
-                .placeholder(R.drawable.bunkies_onboarding_2)
+                .placeholder(R.drawable.bunkies_profile)
                 .into(holder.binding.roommateImageView);
 
 //        holder.binding.roommateName.setText("Richard Jameson, 23");
@@ -51,25 +51,34 @@ public class AvailableRoommatesAdapter extends RecyclerView.Adapter<AvailableRoo
 //        holder.binding.roommateGenderWork.setText("Female|Student");
 //
 //        holder.binding.budget.setText("$1,500/month");
-        holder.binding.roommateName.setText(availableRoommates.get(position).getName()+", 21");
+        if(availableRoommates.get(position).getName() != null){
+            holder.binding.roommateName.setText(availableRoommates.get(position).getName()+", 21");
+        }
+
         if(availableRoommates.get(position).isImmediately()){
             holder.binding.roommateCityTime.setText(availableRoommates.get(position).
                     getCity()+", Immediately");
         }else {
-            holder.binding.roommateCityTime.setText(availableRoommates.get(position).
-                    getCity()+", "+ AppUtils.Companion.convertDateToPresentableFormatWithOnlyDate(
-                    AppUtils.Companion.fromTimeStampToString(
-                            availableRoommates.get(position).getDate().getSeconds()
-                    )));
+            if(availableRoommates.get(position).getDate() != null &&!availableRoommates.get(position).getDate().toString().equals("")){
+                holder.binding.roommateCityTime.setText(availableRoommates.get(position).
+                        getCity()+", "+ AppUtils.Companion.convertDateToPresentableFormatWithOnlyDate(
+                        AppUtils.Companion.fromTimeStampToString(
+                                availableRoommates.get(position).getDate().getSeconds()
+                        )));
+            }
         }
 
-        holder.binding.roommateGenderWork.setText(availableRoommates.get(position).getGender()+
-                " | "+availableRoommates.get(position).getOccupation());
+        if(availableRoommates.get(position).getGender() != null &&
+        availableRoommates.get(position).getOccupation() != null){
+            holder.binding.roommateGenderWork.setText(availableRoommates.get(position).getGender()+
+                    " | "+availableRoommates.get(position).getOccupation());
+        }
 
-        //set Budget
-        holder.binding.budget.setText("NGN "+ NumberFormat.getNumberInstance(Locale.US).format(
-                availableRoommates.get(position).getBudget())+"/year");
-
+        if(availableRoommates.get(position).getBudget() != null){
+            //set Budget
+            holder.binding.budget.setText("NGN "+ NumberFormat.getNumberInstance(Locale.US).format(
+                    Integer.parseInt(availableRoommates.get(position).getBudget()))+"/year");
+        }
 
         holder.binding.getRoot().setOnClickListener(v -> {
             v.getContext().startActivity(

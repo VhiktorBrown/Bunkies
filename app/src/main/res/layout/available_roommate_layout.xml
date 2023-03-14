@@ -29,7 +29,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/bunkies_onboarding_1"
+                android:src="@drawable/bunkies_profile"
                 android:background="@color/white"
                 android:scaleType="centerCrop" />
 
@@ -104,6 +104,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:textAlignment="gravity"
                 android:gravity="start"
+                android:textSize="@dimen/_8ssp"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
                 app:layout_constraintTop_toTopOf="@+id/budget_text"

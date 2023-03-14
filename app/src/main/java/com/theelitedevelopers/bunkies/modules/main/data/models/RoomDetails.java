@@ -12,7 +12,7 @@ public class RoomDetails implements Parcelable {
     String streetAddress;
     String bio;
     String adType;
-    String rentPerYear;
+    String rent;
     String deposit;
     boolean immediately;
     boolean billsIncluded;
@@ -20,12 +20,14 @@ public class RoomDetails implements Parcelable {
     String neighbourhood;
     Timestamp date;
     String numberOfRooms;
-    String[] suitableFor;
-    String[] roomAttributes;
+//    String[] suitableFor;
+//    String[] roomAttributes;
     String uid;
     String image;
     String roomType;
 
+    public RoomDetails(){
+    }
     public RoomDetails(String image) {
         this.image = image;
     }
@@ -35,7 +37,7 @@ public class RoomDetails implements Parcelable {
         streetAddress = in.readString();
         bio = in.readString();
         adType = in.readString();
-        rentPerYear = in.readString();
+        rent = in.readString();
         deposit = in.readString();
         immediately = in.readByte() != 0;
         billsIncluded = in.readByte() != 0;
@@ -43,8 +45,8 @@ public class RoomDetails implements Parcelable {
         neighbourhood = in.readString();
         date = in.readParcelable(Timestamp.class.getClassLoader());
         numberOfRooms = in.readString();
-        suitableFor = in.createStringArray();
-        roomAttributes = in.createStringArray();
+//        suitableFor = in.createStringArray();
+//        roomAttributes = in.createStringArray();
         uid = in.readString();
         image = in.readString();
         roomType = in.readString();
@@ -94,12 +96,12 @@ public class RoomDetails implements Parcelable {
         this.adType = adType;
     }
 
-    public String getRentPerYear() {
-        return rentPerYear;
+    public String getRent() {
+        return rent;
     }
 
-    public void setRentPerYear(String rentPerYear) {
-        this.rentPerYear = rentPerYear;
+    public void setRent(String rent) {
+        this.rent = rent;
     }
 
     public String getDeposit() {
@@ -158,21 +160,21 @@ public class RoomDetails implements Parcelable {
         this.numberOfRooms = numberOfRooms;
     }
 
-    public String[] getSuitableFor() {
-        return suitableFor;
-    }
-
-    public void setSuitableFor(String[] suitableFor) {
-        this.suitableFor = suitableFor;
-    }
-
-    public String[] getRoomAttributes() {
-        return roomAttributes;
-    }
-
-    public void setRoomAttributes(String[] roomAttributes) {
-        this.roomAttributes = roomAttributes;
-    }
+//    public String[] getSuitableFor() {
+//        return suitableFor;
+//    }
+//
+//    public void setSuitableFor(String[] suitableFor) {
+//        this.suitableFor = suitableFor;
+//    }
+//
+//    public String[] getRoomAttributes() {
+//        return roomAttributes;
+//    }
+//
+//    public void setRoomAttributes(String[] roomAttributes) {
+//        this.roomAttributes = roomAttributes;
+//    }
 
     public String getUid() {
         return uid;
@@ -209,7 +211,7 @@ public class RoomDetails implements Parcelable {
         parcel.writeString(streetAddress);
         parcel.writeString(bio);
         parcel.writeString(adType);
-        parcel.writeString(rentPerYear);
+        parcel.writeString(rent);
         parcel.writeString(deposit);
         parcel.writeByte((byte) (immediately ? 1 : 0));
         parcel.writeByte((byte) (billsIncluded ? 1 : 0));
@@ -217,8 +219,8 @@ public class RoomDetails implements Parcelable {
         parcel.writeString(neighbourhood);
         parcel.writeParcelable(date, i);
         parcel.writeString(numberOfRooms);
-        parcel.writeStringArray(suitableFor);
-        parcel.writeStringArray(roomAttributes);
+//        parcel.writeStringArray(suitableFor);
+//        parcel.writeStringArray(roomAttributes);
         parcel.writeString(uid);
         parcel.writeString(image);
         parcel.writeString(roomType);

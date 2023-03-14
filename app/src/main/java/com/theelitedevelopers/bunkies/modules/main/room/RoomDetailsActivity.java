@@ -2,10 +2,12 @@ package com.theelitedevelopers.bunkies.modules.main.room;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.theelitedevelopers.bunkies.core.data.local.SharedPref;
 import com.theelitedevelopers.bunkies.core.utils.AppUtils;
 import com.theelitedevelopers.bunkies.core.utils.Constants;
 import com.theelitedevelopers.bunkies.databinding.ActivityRoomDetailsBinding;
@@ -30,6 +32,8 @@ public class RoomDetailsActivity extends AppCompatActivity {
 
         roomDetails = getIntent().getParcelableExtra(Constants.ROOM_DETAILS);
 
+        binding.goBack.setOnClickListener(v -> onBackPressed());
+
         setRoomDetails(roommate);
 
         database.collection(Constants.ROOMMATES)
@@ -42,6 +46,13 @@ public class RoomDetailsActivity extends AppCompatActivity {
                     }
                 });
 
+        //If I'm the owner of the Ad, remove 'Send Message' button
+        if(SharedPref.getInstance(getApplicationContext()).getString(Constants.UID).equals(roomDetails.getUid())){
+            binding.sendMessageButton.setVisibility(View.GONE);
+        }else {
+            binding.sendMessageButton.setVisibility(View.VISIBLE);
+        }
+
         binding.sendMessageButton.setOnClickListener(v -> {
             startActivity(new Intent(RoomDetailsActivity.this, ChatActivity.class)
                     .putExtra(Constants.RECEIVER_UID, roomDetails.getUid())
@@ -52,9 +63,9 @@ public class RoomDetailsActivity extends AppCompatActivity {
     private void setRoomDetails(Roommate roommate){
         binding.roomType.setText(roomDetails.getRoomType());
         binding.bio.setText(roomDetails.getBio());
-        binding.rent.setText("NGN "+NumberFormat.getNumberInstance(Locale.US).format(roomDetails.getRentPerYear())+"/year");
+        binding.rent.setText("NGN "+NumberFormat.getNumberInstance(Locale.US).format(Integer.parseInt(roomDetails.getRent()))+"/year");
         binding.room.setText(roomDetails.getNumberOfRooms()+" "+roomDetails.getRoomType());
-        binding.deposit.setText("NGN"+NumberFormat.getNumberInstance(Locale.US).format(roomDetails.getBudget()));
+        binding.deposit.setText("NGN "+NumberFormat.getNumberInstance(Locale.US).format(Integer.parseInt(roomDetails.getDeposit())));
         if(roomDetails.isImmediately()){
             binding.availability.setText("Immediately");
         }else {

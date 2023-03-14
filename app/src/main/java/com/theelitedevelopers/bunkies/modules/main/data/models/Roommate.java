@@ -2,6 +2,7 @@ package com.theelitedevelopers.bunkies.modules.main.data.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
 import com.google.firebase.Timestamp;
 import com.google.gson.annotations.SerializedName;
 
@@ -10,7 +11,7 @@ public class Roommate implements Parcelable {
     String email;
     String name;
     String uid;
-    Timestamp dateOfBirth;
+    Timestamp date_of_birth;
     String location;
     String roomType;
     String password;
@@ -22,7 +23,7 @@ public class Roommate implements Parcelable {
     String streetAddress;
     String occupation;
     String adType;
-    String rentPerYear;
+    String rent;
     String deposit;
     boolean immediately;
     boolean billsIncluded;
@@ -30,8 +31,8 @@ public class Roommate implements Parcelable {
     String neighbourhood;
     Timestamp date;
     String numberOfRooms;
-    String[] traits;
-    String[] interests;
+//    List<String> traits;
+//    List<String > interests;
     @SerializedName("preferences_done")
     Boolean preferences_done;
     @SerializedName("personal_traits_done")
@@ -58,7 +59,7 @@ public class Roommate implements Parcelable {
         email = in.readString();
         name = in.readString();
         uid = in.readString();
-        dateOfBirth = in.readParcelable(Timestamp.class.getClassLoader());
+        date_of_birth = in.readParcelable(Timestamp.class.getClassLoader());
         location = in.readString();
         roomType = in.readString();
         password = in.readString();
@@ -71,7 +72,7 @@ public class Roommate implements Parcelable {
         streetAddress = in.readString();
         occupation = in.readString();
         adType = in.readString();
-        rentPerYear = in.readString();
+        rent = in.readString();
         deposit = in.readString();
         immediately = in.readByte() != 0;
         billsIncluded = in.readByte() != 0;
@@ -79,8 +80,8 @@ public class Roommate implements Parcelable {
         neighbourhood = in.readString();
         date = in.readParcelable(Timestamp.class.getClassLoader());
         numberOfRooms = in.readString();
-        traits = in.createStringArray();
-        interests = in.createStringArray();
+//        traits = in.createStringArrayList();
+//        interests = in.createStringArrayList();
         byte tmpPreferences_done = in.readByte();
         preferences_done = tmpPreferences_done == 0 ? null : tmpPreferences_done == 1;
         byte tmpPersonal_traits_done = in.readByte();
@@ -103,7 +104,7 @@ public class Roommate implements Parcelable {
         dest.writeString(email);
         dest.writeString(name);
         dest.writeString(uid);
-        dest.writeParcelable(dateOfBirth, flags);
+        dest.writeParcelable(date_of_birth, flags);
         dest.writeString(location);
         dest.writeString(roomType);
         dest.writeString(password);
@@ -115,7 +116,7 @@ public class Roommate implements Parcelable {
         dest.writeString(streetAddress);
         dest.writeString(occupation);
         dest.writeString(adType);
-        dest.writeString(rentPerYear);
+        dest.writeString(rent);
         dest.writeString(deposit);
         dest.writeByte((byte) (immediately ? 1 : 0));
         dest.writeByte((byte) (billsIncluded ? 1 : 0));
@@ -123,8 +124,8 @@ public class Roommate implements Parcelable {
         dest.writeString(neighbourhood);
         dest.writeParcelable(date, flags);
         dest.writeString(numberOfRooms);
-        dest.writeStringArray(traits);
-        dest.writeStringArray(interests);
+//        dest.writeStringList(traits);
+//        dest.writeStringList(interests);
         dest.writeByte((byte) (preferences_done == null ? 0 : preferences_done ? 1 : 2));
         dest.writeByte((byte) (personal_traits_done == null ? 0 : personal_traits_done ? 1 : 2));
         dest.writeByte((byte) (personal_interests_done == null ? 0 : personal_interests_done ? 1 : 2));
@@ -183,12 +184,12 @@ public class Roommate implements Parcelable {
         this.uid = uid;
     }
 
-    public Timestamp getDateOfBirth() {
-        return dateOfBirth;
+    public Timestamp getDate_of_birth() {
+        return date_of_birth;
     }
 
-    public void setDateOfBirth(Timestamp dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setDate_of_birth(Timestamp date_of_birth) {
+        this.date_of_birth = date_of_birth;
     }
 
     public String getLocation() {
@@ -279,12 +280,12 @@ public class Roommate implements Parcelable {
         this.adType = adType;
     }
 
-    public String getRentPerYear() {
-        return rentPerYear;
+    public String getRent() {
+        return rent;
     }
 
-    public void setRentPerYear(String rentPerYear) {
-        this.rentPerYear = rentPerYear;
+    public void setRent(String rent) {
+        this.rent = rent;
     }
 
     public String getDeposit() {
@@ -343,21 +344,21 @@ public class Roommate implements Parcelable {
         this.numberOfRooms = numberOfRooms;
     }
 
-    public String[] getTraits() {
-        return traits;
-    }
-
-    public void setTraits(String[] traits) {
-        this.traits = traits;
-    }
-
-    public String[] getInterests() {
-        return interests;
-    }
-
-    public void setInterests(String[] interests) {
-        this.interests = interests;
-    }
+//    public List<String> getTraits() {
+//        return traits;
+//    }
+//
+//    public void setTraits(List<String> traits) {
+//        this.traits = traits;
+//    }
+//
+//    public List<String> getInterests() {
+//        return interests;
+//    }
+//
+//    public void setInterests(List<String> interests) {
+//        this.interests = interests;
+//    }
 
     public Boolean getPreferences_done() {
         return preferences_done;

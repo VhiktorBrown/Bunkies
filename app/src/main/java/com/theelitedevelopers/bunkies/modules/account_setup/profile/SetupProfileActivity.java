@@ -56,6 +56,8 @@ public class SetupProfileActivity extends AppCompatActivity {
         binding = ActivitySetupProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.goBack.setOnClickListener(v -> onBackPressed());
+
         binding.gender.setOnClickListener(v -> {
             showBottomSheetDialog(binding.gender.getId());
         });
